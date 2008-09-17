@@ -1,0 +1,42 @@
+!path c:\Source\fit4delphi\bin\*.bpl
+!define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v %p}
+
+h1. Integer Arithmetic
+
+The computer relies on arithmetic. Here we test a variety of arithmetic operations expressed as 32 bit two's complement binary numbers (Java's int).
+
+
+Now we try something similar using automatic type conversion offered by ColumnFixtures (BFL1).
+
+!|TArithmeticFixture|
+|x|y|+|-|*|/|
+|0|0|0|0|0|0|
+|1|2|3|-1|2|0.5|
+|1|-1|0|2|-1|-1|
+|10000|10000|20000|0|100000000|1|
+|100000|100000|200000|0|10000000000|1|
+|1000000|1000000|2000000|0|1000000000000|1|
+
+!|TArithmeticColumnFixture|
+| x | y | plus() | times() | divide() | floating() |
+| 2 | 3 | 5 | 6 | 0 | 0.6666667 |
+| 0 | 0 | 0 | 0 | error | error |
+| 0 | 0 | 0 | 0 | | |
+| 200 | 300 | 500 | 60000 | 0 | 0.6666667 |
+| 2 | 3 | 10 | 10 | 10 |
+| 200 | 3 | 5 | 6 | 0 | 0.6666667 |
+| 2 | -3 | -1 | -6 | -0 | -0.6666667 |
+
+!|TAdd Fixture|
+|firstValue|secondValue|resultant()|
+|1|2|3|
+|2|2|5|
+|3000|2|3002|
+|200|2|203|
+|10|2|12|
+
+| TSummary |
+
+Document prepaired by Ward Cunningham
+First Version July 11, 2002
+Last Update August 17, 2002

@@ -1,0 +1,8 @@
+!path c:\Source\fit4delphi\bin\*.bpl
+!define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl }
+
+!contents -R
+
+---------
+
+|TSummaryFixture|

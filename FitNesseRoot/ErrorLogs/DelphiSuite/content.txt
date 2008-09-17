@@ -1,0 +1,13 @@
+|'''Date: '''|!-3:28:11 PM (CEST) on Wednesday, September 17, 2008-!|
+|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl  localhost 8888 2-!|
+|'''Exit code: '''|!-10-!|
+|'''Time elapsed: '''|!-0.453 seconds-!|
+----'''Standard Output:'''
+{{{http request sent
+Validating connection...
+	...ok
+processing document of size: 2720
+	results: 3 right, 2 wrong, 0 ignored, 2 exceptions
+processing document of size: 10431
+	results: 87 right, 6 wrong, 0 ignored, 0 exceptions
+processing document of si}}}

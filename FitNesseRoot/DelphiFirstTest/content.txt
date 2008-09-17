@@ -1,0 +1,11 @@
+!path c:\source\fitnesse\DelphiFit\bin\*.bpl
+!define COMMAND_PATTERN {c:\source\fitnesse\DelphiFit\bin\FitServer.exe -v %p}
+!define PATH_SEPARATOR {;}
+
+!|TAddFixture|
+|firstValue|secondValue|resultant()|
+|1|2|3|
+|2|2|5|
+|3000|2|3002|
+|200|2|203|
+|10|2|12|
