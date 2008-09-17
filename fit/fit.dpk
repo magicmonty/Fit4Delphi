@@ -1,0 +1,80 @@
+package fit;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD OFF}
+{%TogetherDiagram 'ModelSupport_fit\default.txaPackage'}
+
+requires
+  rtl;
+
+contains
+  IdSysVCL,
+  IdStreamVCL,
+  IdSysNativeVCL,
+  IdSysBase,
+  IdObjs,
+  IdStream,
+  IdSys,
+  IdException,
+  IdResourceStrings,
+  IdSysWin32,
+  IdGlobal,
+  RegExpr,
+  ColumnFixture in 'source\ColumnFixture.pas',
+  FileRunner in 'source\FileRunner.pas',
+  Fixture in 'source\Fixture.pas',
+  Parse in 'source\Parse.pas',
+  ActionFixture in 'source\ActionFixture.pas',
+  TimedActionFixture in 'source\TimedActionFixture.pas',
+  RowFixture in 'source\RowFixture.pas',
+  SummaryFixture in 'source\SummaryFixture.pas',
+  Runtime in 'source\Runtime.pas',
+  Counts in 'source\Counts.pas',
+  FixtureListener in 'source\FixtureListener.pas',
+  NullFixtureListener in 'source\NullFixtureListener.pas',
+  TypeAdapter in 'source\TypeAdapter.pas',
+  Binding in 'source\Binding.pas',
+  GracefulNamer in 'source\GracefulNamer.pas',
+  ClassIsNotFixtureException in 'source\exception\ClassIsNotFixtureException.pas',
+  CouldNotLoadComponentFitFailureException in 'source\exception\CouldNotLoadComponentFitFailureException.pas',
+  CouldNotParseFitFailureException in 'source\exception\CouldNotParseFitFailureException.pas',
+  FitFailureException in 'source\exception\FitFailureException.pas',
+  FitMatcherException in 'source\exception\FitMatcherException.pas',
+  FitParseException in 'source\exception\FitParseException.pas',
+  FixtureException in 'source\exception\FixtureException.pas',
+  NoDefaultConstructorFixtureException in 'source\exception\NoDefaultConstructorFixtureException.pas',
+  NoSuchFieldFitFailureException in 'source\exception\NoSuchFieldFitFailureException.pas',
+  NoSuchFixtureException in 'source\exception\NoSuchFixtureException.pas',
+  NoSuchMethodFitFailureException in 'source\exception\NoSuchMethodFitFailureException.pas',
+  FixtureLoader in 'source\FixtureLoader.pas',
+  CellComparator in 'source\CellComparator.pas',
+  FitMatcher in 'source\FitMatcher.pas',
+  FixtureName in 'source\FixtureName.pas',
+  DetailedRTTI in 'source\DetailedRTTI.pas',
+  StringTokenizer in 'source\StringTokenizer.pas',
+  Method in 'source\Method.pas',
+  Field in 'source\Field.pas',
+  ParseException in 'source\exception\ParseException.pas';
+
+end.

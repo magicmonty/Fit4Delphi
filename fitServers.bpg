@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl \
+  fitServer.exe FitDTests.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+FitDTests.exe: dunit\FitDTests.dpr
+  $(DCC)
+
+fit.bpl: fit\fit.dpk
+  $(DCC)
+
+exampleFixture1.bpl: eg\exampleFixture1.dpk
+  $(DCC)
+
+addFixture1.bpl: eg\addFixture1.dpk
+  $(DCC)
+
+fitServer.exe: fitServer\fitServer.dpr
+  $(DCC)
+
+eg_music.bpl: eg\music\eg_music.dpk
+  $(DCC)
+
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{69546AE6-B782-4E92-8105-51E1D9BDCB2F}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="fit.bpl">fit\fit.bdsproj</Projects>
+      <Projects Name="exampleFixture1.bpl">eg\exampleFixture1.bdsproj</Projects>
+      <Projects Name="addFixture1.bpl">eg\addFixture1.bdsproj</Projects>
+      <Projects Name="eg_music.bpl">eg\music\eg_music.bdsproj</Projects>
+      <Projects Name="fitServer.exe">fitServer\fitServer.bdsproj</Projects>
+      <Projects Name="FitDTests.exe">dunit\FitDTests.bdsproj</Projects>
+      <Projects Name="Targets">fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl fitServer.exe FitDTests.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>
