@@ -11,42 +11,31 @@
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
-unit StringTokenizer;
+//
+// Modified or written by Object Mentor, Inc. for inclusion with FitNesse.
+// Copyright (c) 2002 Cunningham & Cunningham, Inc.
+// Released under the terms of the GNU General Public License version 2 or later.
+unit Comment;
 
 interface
 
 uses
-  Classes;
+  Fixture;
 
 type
-  TStringTokenizer = class(TStringList)
-  private
-    FSeparator : string;
-  protected
-    procedure SetTextStr(const Value : string); override;
-  public
-    constructor Create(const Separator : string = ' ');
+  TComment = class(TFixture)
   end;
 
 implementation
 
 uses
-  SysUtils;
+  Classes;
 
-{ TStringTokenizer }
+initialization
+  RegisterClass(TComment);
 
-constructor TStringTokenizer.Create(const Separator : string);
-begin
-  FSeparator := Separator;
-end;
-
-procedure TStringTokenizer.SetTextStr(const Value : string);
-var
-  v : string;
-begin
-  v := StringReplace(Value, FSeparator, #13#10, [rfReplaceAll]);
-  inherited SetTextStr(v);
-end;
+finalization
+  UnRegisterClass(TComment);
 
 end.
 

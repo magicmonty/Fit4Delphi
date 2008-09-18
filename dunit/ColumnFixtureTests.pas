@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -29,13 +29,13 @@ type
   TColumnTestFixture = class(TColumnFixture)
   public
     FField : integer;
-    FstringField : String;
-    constructor Create; override; 
+    FstringField : string;
+    constructor Create; override;
   published
     function method : Integer;
     property field : Integer read FField write FField;
-    function stringMethod : String;
-    property stringField : String read FstringField write FstringField;
+    function stringMethod : string;
+    property stringField : string read FstringField write FstringField;
   end;
 {$METHODINFO OFF}
 
@@ -81,7 +81,7 @@ begin
   Result := 86;
 end;
 
-function TColumnTestFixture.stringMethod : String;
+function TColumnTestFixture.stringMethod : string;
 begin
   result := '';
 end;
@@ -192,14 +192,14 @@ end;
 
 procedure TColumnFixtureTests.testDoTable;
 var
-  parse   : TParse;
+  parse : TParse;
   fixture : TFixture;
 begin
   parse :=
     TParse.create('<table><tr><td>TColumnTestFixture</td></tr>' +
-      '<tr><td>field</td><td>method()</td></tr>' +
-      '<tr><td>1</td><td>2</td></tr>' +
-      '<tr><td>2</td><td>86</td></tr></table>');
+    '<tr><td>field</td><td>method()</td></tr>' +
+    '<tr><td>1</td><td>2</td></tr>' +
+    '<tr><td>2</td><td>86</td></tr></table>');
   fixture := TFixture.Create;
   try
     fixture.doTables(parse);

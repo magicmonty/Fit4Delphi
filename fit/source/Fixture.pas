@@ -46,7 +46,6 @@ type
   protected
     FListener : IFixtureListener;
     FBPLList : TStringList;
-    summary : TStringList;
     args : TStringList;
     function loadFixture(fixtureName : string) : TFixture;
     procedure doCell(cell : TParse; columnNumber : integer); virtual;
@@ -61,6 +60,7 @@ type
     function doLabel(s : string) : string;
   public
     Counts : TCounts;
+    Summary : TStringList;
     constructor Create; virtual;
     destructor Destroy; override;
     procedure doTables(tables : TParse);
@@ -108,15 +108,17 @@ begin
   listener := TNullFixtureListener.Create;
   FBPLList := TStringList.Create;
   args := TStringList.Create;
-//  summary := TStringList.Create;
+  summary := TStringList.Create;
 end;
+
+// TODO
 
 destructor TFixture.Destroy;
 begin
 //  Counts.Free;
-//  listener := nil;
-//  FBPLList.Free;
-//  args.Free;
+  listener := nil;
+  FBPLList.Free;
+  args.Free;
 //  summary.Free;
   inherited;
 end;
@@ -395,7 +397,11 @@ begin
         fixture.interpretTables(tables);
         fixture.Free;
       except
-        interpretFollowingTables(tables);
+        on e : Exception do
+        begin
+          doException(heading, e);
+          interpretFollowingTables(tables);
+        end;
       end;
     end;
   end;

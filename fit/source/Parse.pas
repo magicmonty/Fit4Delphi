@@ -238,7 +238,7 @@ end;
 
 constructor TParse.Create(text : string);
 var
-  tags : TstringList;
+  tags : TStringList;
 begin
   tags := TStringList.Create;
   try

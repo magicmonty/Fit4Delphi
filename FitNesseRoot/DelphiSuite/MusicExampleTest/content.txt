@@ -13,7 +13,7 @@ _This is a the file that library reads. It is tab separated text. Try downloadin
 
 We can pick songs and see details of our selection as we go.
 
-!| TActionFixture |
+!| fit.ActionFixture |
 | enter | select | 1 |
 | check | title | Akila |
 | check | artist | Toure Kunda |

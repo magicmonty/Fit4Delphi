@@ -33,7 +33,7 @@ type
     Value : integer;
   end;
 
-  TCounts = class(TObject)
+  TCounts = class(TInterfacedObject)
   private
     function GetItem(const Index : Integer) : TCount;
     function GetCount : integer;

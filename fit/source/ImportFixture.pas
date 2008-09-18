@@ -11,42 +11,45 @@
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
-unit StringTokenizer;
+//
+// Modified or written by Object Mentor, Inc. for inclusion with FitNesse.
+// Copyright (c) 2002 Cunningham & Cunningham, Inc.
+// Released under the terms of the GNU General Public License version 2 or later.
+unit ImportFixture;
 
 interface
 
 uses
-  Classes;
+  Parse,
+  Fixture;
 
 type
-  TStringTokenizer = class(TStringList)
-  private
-    FSeparator : string;
-  protected
-    procedure SetTextStr(const Value : string); override;
+  TImportFixture = class(TFixture)
   public
-    constructor Create(const Separator : string = ' ');
+    procedure doRow(row : TParse); override;
   end;
 
 implementation
 
 uses
-  SysUtils;
+  FixtureLoader,
+  Classes;
 
-{ TStringTokenizer }
+{ TImportFixture }
 
-constructor TStringTokenizer.Create(const Separator : string);
-begin
-  FSeparator := Separator;
-end;
-
-procedure TStringTokenizer.SetTextStr(const Value : string);
+procedure TImportFixture.doRow(row : TParse);
 var
-  v : string;
+  packageName : string;
 begin
-  v := StringReplace(Value, FSeparator, #13#10, [rfReplaceAll]);
-  inherited SetTextStr(v);
+  packageName := row.parts.text();
+  TFixtureLoader.instance().addPackageToPath(packageName);
 end;
+
+initialization
+  RegisterClass(TImportFixture);
+
+finalization
+  UnRegisterClass(TImportFixture);
 
 end.
 

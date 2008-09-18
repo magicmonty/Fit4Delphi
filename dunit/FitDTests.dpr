@@ -67,7 +67,9 @@ uses
   StringTokenizer in '..\fit\source\StringTokenizer.pas',
   SummaryFixture in '..\fit\source\SummaryFixture.pas',
   TimedActionFixture in '..\fit\source\TimedActionFixture.pas',
-  TypeAdapter in '..\fit\source\TypeAdapter.pas';
+  TypeAdapter in '..\fit\source\TypeAdapter.pas',
+  FixtureLoaderTest in 'FixtureLoaderTest.pas',
+  FriendlyErrorTest in 'FriendlyErrorTest.pas';
 
 {$R *.RES}
 

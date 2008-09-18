@@ -39,6 +39,17 @@ type
     procedure testCreate;
   end;
 
+{$METHODINFO ON}
+  TFixtureOne = class(TFixture)
+  end;
+
+  FixtureTwo = class(TFixture)
+  end;
+
+  TheThirdFixture = class(TFixture)
+  end;
+{$METHODINFO OFF}
+
 implementation
 
 uses
@@ -264,6 +275,9 @@ initialization
   classes.RegisterClass(failFixture);
   classes.RegisterClass(IgnoreFixture);
   classes.RegisterClass(ExceptionFixture);
+  classes.RegisterClass(TFixtureOne);
+  classes.RegisterClass(FixtureTwo);
+  classes.RegisterClass(TheThirdFixture);
 
 end.
 

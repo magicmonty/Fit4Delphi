@@ -34,14 +34,14 @@ type
   private
     fixturePathElements : TStringList;
     procedure addPackageToFixturePath(fixture : TFixture);
-//    procedure addPackageToPath(name : string);
     function instantiateFixture(fixtureName : string) : TFixture;
     function loadFixtureClass(fixtureName : string) : TClass;
     function instantiateFirstValidFixtureClass(fixtureName : TFixtureName) : TFixture;
-    constructor Create;
   public
     class function instance() : TFixtureLoader;
     function disgraceThenLoad(tableName : string) : TFixture;
+    procedure addPackageToPath(name : string);
+    constructor Create;
     destructor Destroy; override;
   end;
 
@@ -60,6 +60,7 @@ constructor TFixtureLoader.Create();
 begin
   inherited Create;
   fixturePathElements := TStringList.Create;
+  fixturePathElements.Add('fit');
 end;
 
 destructor TFixtureLoader.Destroy();
@@ -102,10 +103,10 @@ begin
   //  end;
 end;
 
-//procedure TFixtureLoader.addPackageToPath(name : string);
-//begin
-//  fixturePathElements.add(name);
-//end;
+procedure TFixtureLoader.addPackageToPath(name : string);
+begin
+  fixturePathElements.add(name);
+end;
 
 function TFixtureLoader.instantiateFixture(fixtureName : string) : TFixture;
 var
@@ -118,13 +119,19 @@ begin
 end;
 
 function TFixtureLoader.loadFixtureClass(fixtureName : string) : TClass;
+var
+  p : Integer;
 begin
   try
+    // TODO
+    p := Pos('.', fixtureName);
+    if p <> 0 then
+      fixtureName := Copy(fixtureName, p + 1, MaxInt);
     result := FindClass(fixtureName);
   except
     on deadEnd : EClassNotFound do
     begin
-      if (deadEnd.Message = fixtureName) then
+      if (deadEnd.Message = Format('Class %s not found', [fixtureName])) then
       begin
         raise TNoSuchFixtureException.Create(fixtureName);
       end

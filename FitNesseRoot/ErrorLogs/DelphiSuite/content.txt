@@ -1,7 +1,7 @@
-|'''Date: '''|!-3:28:11 PM (CEST) on Wednesday, September 17, 2008-!|
-|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl  localhost 8888 2-!|
+|'''Date: '''|!-4:48:00 PM (CEST) on Wednesday, September 17, 2008-!|
+|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl  localhost 8888 3-!|
 |'''Exit code: '''|!-10-!|
-|'''Time elapsed: '''|!-0.453 seconds-!|
+|'''Time elapsed: '''|!-0.657 seconds-!|
 ----'''Standard Output:'''
 {{{http request sent
 Validating connection...

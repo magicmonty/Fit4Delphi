@@ -75,6 +75,11 @@ contains
   StringTokenizer in 'source\StringTokenizer.pas',
   Method in 'source\Method.pas',
   Field in 'source\Field.pas',
-  ParseException in 'source\exception\ParseException.pas';
+  ParseException in 'source\exception\ParseException.pas',
+  Comment in 'source\Comment.pas',
+  FixtureSupplier in 'source\FixtureSupplier.pas',
+  PrimitiveFixture in 'source\PrimitiveFixture.pas',
+  ImportFixture in 'source\ImportFixture.pas',
+  WikiRunner in 'source\WikiRunner.pas';
 
 end.

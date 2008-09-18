@@ -93,6 +93,9 @@ procedure TFixtureName.addBlahAndBlahFixture(qualifiedBy : string; candidateClas
 begin
   candidateClassNames.add(qualifiedBy + nameAsString);
   candidateClassNames.add(qualifiedBy + nameAsString + 'Fixture');
+
+  candidateClassNames.add(qualifiedBy + StringReplace(nameAsString, '.', '.T', [rfReplaceAll]));
+  candidateClassNames.add(qualifiedBy + StringReplace(nameAsString, '.', '.T', [rfReplaceAll]) + 'Fixture');
 end;
 
 end.
