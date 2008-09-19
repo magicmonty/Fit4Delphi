@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -20,7 +20,8 @@ uses
   StrUtils,
   SysUtils,
   Parse,
-  TypeAdapter, Fixture;
+  TypeAdapter,
+  Fixture;
 
 type
   TCellComparator = class
@@ -41,8 +42,12 @@ type
 implementation
 
 uses
-  FitMatcherException, FitFailureException, CouldNotParseFitFailureException, FitMatcher, TypInfo,
-  variants;
+  FitMatcherException,
+  FitFailureException,
+  CouldNotParseFitFailureException,
+  FitMatcher,
+  TypInfo,
+  Variants;
 
 type
   TUnparseable = class
@@ -102,16 +107,19 @@ function TCellComparator.parseCell() : Variant;
 begin
   try
     result := typeAdapter.parse(cell.text());
+    exit;
     // Ignore parse exceptions, print non-parse exceptions,
     // return null so that compareCellToResult tries relational matching.
   except
-    //TODO    on e : NumberFormatException do ;
+    on e : EConvertError {NumberFormatException} do
+      ;
     on e : TParseException do
       ;
     on e : Exception do
       ; //TODO e.printStackTrace();
   end;
-//  Result := TUnparseable.Create;
+  //Result := EmptyParam;
+  //  Result := TUnparseable.Create;
 end;
 
 procedure TCellComparator.tryRelationalMatch();
@@ -149,7 +157,7 @@ begin
   }
   *)
   adapterType := typeAdapter.TheType;
-  cantParseException := TCouldNotParseFitFailureException.Create(cell.text(), VarTypeAsText(Ord(adapterType)));
+  cantParseException := TCouldNotParseFitFailureException.Create(cell.text(), TTypeKindNames[adapterType]);
   if (result <> null) then
   begin
     matcher := TFitMatcher.Create(cell.text(), result);

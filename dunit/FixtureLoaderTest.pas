@@ -36,12 +36,14 @@ type
     procedure testLoadFixturesFromPreviouslyRememberedPackages();
     procedure testLoadFixturesWithGracefulName();
     procedure testLoadFixturesWithFixtureImplied();
+    procedure testLoadFixturesWithFullPackageName;
   end;
 
 implementation
 
 uses
   Fixture;
+  
 { TFixtureLoaderTest }
 
 procedure TFixtureLoaderTest.setUp();
@@ -81,6 +83,15 @@ begin
   fixtureLoader.disgraceThenLoad('fit.TheThirdFixture');
   fixture:=fixtureLoader.disgraceThenLoad('the third');
   CheckEquals({'fit.'}'TheThirdFixture',fixture.ClassName); //TODO
+end;
+
+procedure TFixtureLoaderTest.testLoadFixturesWithFullPackageName();
+var
+  f2 : TFixture;
+begin
+  fixtureLoader.disgraceThenLoad('fitnesse.fixtures.ColumnFixtureTestFixture');
+  f2:=fixtureLoader.disgraceThenLoad('t column fixture test fixture'); //TODO
+  CheckEquals({'fit.'}'TColumnFixtureTestFixture',f2.ClassName); //TODO
 end;
 
 initialization

@@ -52,7 +52,6 @@ type
     procedure doCells(Cells : TParse); virtual;
     procedure doRow(Row : TParse); virtual;
     procedure doRows(Rows : TParse); virtual;
-    procedure doTable(table : TParse); virtual;
     function escape(text : string) : string; overload;
     function escape(s, sFrom, sTo : string) : string; overload;
     function camel(name : string) : string;
@@ -64,7 +63,8 @@ type
     constructor Create; virtual;
     destructor Destroy; override;
     procedure doTables(tables : TParse);
-    procedure DoException(cell : TParse; e : Exception);
+    procedure doTable(table : TParse); virtual;
+    procedure doException(cell : TParse; e : Exception);
     procedure checkCell(cell : TParse; a : TObject {TTypeAdapter}); virtual;
     procedure addBPL(const bpl : string);
     function parse(s : string; aType : TTypeKind) : Variant;

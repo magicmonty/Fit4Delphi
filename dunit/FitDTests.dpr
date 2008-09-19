@@ -27,7 +27,7 @@ uses
   Realtime in '..\eg\music\source\Realtime.pas',
   FitMatcherTest in 'FitMatcherTest.pas',
   TypeAdapterTests in 'TypeAdapterTests.pas',
-  fixtureTests in 'fixtureTests.pas',
+  FixtureTests in 'FixtureTests.pas',
   RegexTest in 'RegexTest.pas',
   GracefulNamerTest in 'GracefulNamerTest.pas',
   CountsTest in 'CountsTest.pas',
@@ -69,7 +69,8 @@ uses
   TimedActionFixture in '..\fit\source\TimedActionFixture.pas',
   TypeAdapter in '..\fit\source\TypeAdapter.pas',
   FixtureLoaderTest in 'FixtureLoaderTest.pas',
-  FriendlyErrorTest in 'FriendlyErrorTest.pas';
+  FriendlyErrorTest in 'FriendlyErrorTest.pas',
+  ColumnFixtureTestFixture in '..\fitnesse\fixtures\ColumnFixtureTestFixture.pas';
 
 {$R *.RES}
 

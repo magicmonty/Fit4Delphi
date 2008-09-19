@@ -81,5 +81,13 @@ contains
   PrimitiveFixture in 'source\PrimitiveFixture.pas',
   ImportFixture in 'source\ImportFixture.pas',
   WikiRunner in 'source\WikiRunner.pas';
-
+{
+  CopyAndAppendLastRow in 'source\decorator\CopyAndAppendLastRow.pas',
+  FixtureClass in 'source\decorator\FixtureClass.pas',
+  IncrementColumnsValue in 'source\decorator\IncrementColumnsValue.pas',
+  Loop in 'source\decorator\Loop.pas',
+  FixtureDecorator in 'source\decorator\FixtureDecorator.pas',
+  Table in 'source\decorator\util\Table.pas',
+  Delta in 'source\decorator\util\Delta.pas';
+}
 end.

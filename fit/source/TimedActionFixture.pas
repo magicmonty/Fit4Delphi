@@ -27,9 +27,9 @@ uses
 type
   TTimedActionFixture = class(TActionFixture)
   protected
-    procedure doTable(table : TParse); override;
     procedure doCells(Cells : TParse); override;
   public
+    procedure doTable(table : TParse); override;
     function td (body : string) : TParse;
     function time : TDateTime; virtual;
   end;

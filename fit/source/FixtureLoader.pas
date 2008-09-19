@@ -125,8 +125,11 @@ begin
   try
     // TODO
     p := Pos('.', fixtureName);
-    if p <> 0 then
+    while p <> 0 do
+    begin
       fixtureName := Copy(fixtureName, p + 1, MaxInt);
+      p := Pos('.', fixtureName);
+    end;
     result := FindClass(fixtureName);
   except
     on deadEnd : EClassNotFound do

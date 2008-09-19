@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -68,6 +68,12 @@ type
     function parse(const s : string) : variant; override;
   end;
 
+const
+  TTypeKindNames : array[TTypeKind] of string = (
+    'Unknown', 'Integer', 'Char', 'Boolean/Enumeration', 'Float',
+    'String', 'Set', 'Class', 'Method', 'WChar', 'LString', 'WString',
+    'Variant', 'Array', 'Record', 'Interface', 'Int64', 'DynArray');
+
 implementation
 
 { TTypeAdapter }
@@ -77,7 +83,8 @@ begin
   case aType of
     tkInteger : result := TIntAdapter.Create;
     tkFloat : result := TFloatAdapter.Create;
-    tkEnumeration : result := TBooleanAdapter.Create; // for unknown reason Delphi uses this type for Boolean params/results
+    tkEnumeration : result := TBooleanAdapter.Create;
+      // for unknown reason Delphi uses this type for Boolean params/results
   else
     result := TTypeAdapter.Create;
   end;
@@ -176,47 +183,38 @@ end;
 
 function TIntAdapter.parse(const theText : string) : variant;
 begin
-  try
-    result := strToInt(theText);
-  except
-    result := 0;
-  end;
-
+  result := strToInt(theText);
 end;
 
 { FloatAdapter }
 
 function TFloatAdapter.parse(const theText : string) : variant;
 begin
-  try
-    result := StrToFloat(theText);
-  except
-    result := 0.0;
-  end;
-
+  result := StrToFloat(theText);
 end;
 
 { TBooleanAdapter }
 
-function TBooleanAdapter.parse(const s: string): variant;
+function TBooleanAdapter.parse(const s : string) : variant;
 var
-  ls  : String;
+  ls : string;
 begin
   Result := false;
   ls := LowerCase(s);
   if (ls = 'true') or
-     (ls = 'yes') or
-     (ls = '1') or
-     (ls = 'y') or
-     (ls = '+') then
+    (ls = 'yes') or
+    (ls = '1') or
+    (ls = 'y') or
+    (ls = '+') then
     Result := True;
 end;
 
 { TArrayAdapter }
 
-function TArrayAdapter.parse(const s: string): variant;
+function TArrayAdapter.parse(const s : string) : variant;
 begin
   // TODO
 end;
 
 end.
+

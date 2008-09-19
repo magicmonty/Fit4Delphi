@@ -21,10 +21,18 @@ uses
   Fixture,
   classes,
   sysUtils,
-  windows;
+  windows,
+  Parse;
 
 type
+  T2dArrayOfString = array of array of string;
+  TStringArray = array of string;
+
   TFixtureTests = class(TTestCase)
+  private
+    class function makeFixtureTable(table : T2dArrayOfString) : string;
+  public
+    class function executeFixture(table : T2dArrayOfString) : TParse;
   published
     procedure TestdoTablesPass;
     procedure TestdoTablesFail;
@@ -53,7 +61,6 @@ type
 implementation
 
 uses
-  Parse,
   Runtime,
   Counts,
   FitFailureException;
@@ -229,6 +236,43 @@ begin
   check(pos(' class="ignore"', theTable.Tag) > 0, 'class ignore was not found ' + theTable.tag);
   checkEquals(1, theFixture.Counts.ignores);
 
+end;
+
+class function TFixtureTests.executeFixture(table : T2dArrayOfString) : TParse;
+var
+  pageString : string;
+  page : TParse;
+  fixture : TFixture;
+begin
+  pageString := makeFixtureTable(table);
+  page := TParse.Create(pageString);
+  fixture := TFixture.Create();
+  fixture.doTables(page);
+  fixture.Free;
+  result := page;
+end;
+
+class function TFixtureTests.makeFixtureTable(table : T2dArrayOfString) : string;
+var
+  buf : string;
+  ri : Integer;
+  ci : Integer;
+  cell : string;
+begin
+  buf := '';
+  buf := buf + '<table>'#10;
+  for ri := Low(table) to High(table) do
+  begin
+    buf := buf + '  <tr>';
+    for ci := Low(table[ri]) to High(table[ri]) do
+    begin
+      cell := table[ri][ci];
+      buf := buf + '<td>' + cell + '</td>';
+    end;
+    buf := buf + '</tr>'#10;
+  end;
+  buf := buf + '</table>'#10;
+  result := buf;
 end;
 
 { PassFixture }

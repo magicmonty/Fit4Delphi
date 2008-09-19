@@ -26,87 +26,95 @@ uses
 
 type
   TFriendlyErrorTest = class(TTestCase)
-  private
-//    procedure testExceptionInMethod;
-//    procedure testNoSuchMethod;
-//    procedure testParseFailure;
   published
     procedure testCantFindFixture;
+    procedure testExceptionInMethod;
+    procedure testNoSuchMethod;
+    procedure testParseFailure;
   end;
 
 implementation
 
 uses
-  Parse, Fixture;
+  Parse,
+  Fixture,
+  FixtureTests;
 
 //Test the FitFailureException mechanism.  If this works, then all of the FitFailureException derivatives ought
 //to be working too.
+
 procedure TFriendlyErrorTest.testCantFindFixture();
 var
-  pageString : String;
-  page  : TParse;
+  pageString : string;
+  page : TParse;
   fixture : TFixture;
-  fixtureName : String;
+  fixtureName : string;
 begin
-pageString := '<table><tr><td>NoSuchFixture</td></tr></table>';
-    page := TParse.Create(pageString);
-    fixture := TFixture.Create();
-    fixture.doTables(page);
-    fixtureName := page.at(0,0,0).body;
-    CheckTrue(Pos('Could not find fixture: NoSuchFixture.', fixtureName) <> 0);
+  pageString := '<table><tr><td>NoSuchFixture</td></tr></table>';
+  page := TParse.Create(pageString);
+  fixture := TFixture.Create();
+  fixture.doTables(page);
+  fixtureName := page.at(0, 0, 0).body;
+  CheckTrue(Pos('Could not find fixture: NoSuchFixture.', fixtureName) <> 0);
 end;
 
-(* TODO
 procedure TFriendlyErrorTest.testNoSuchMethod();
 var
-  pageString : String;
-  page  : TParse;
-  fixture : TFixture;
-  fixtureName : String;
+  page : TParse;
+  columnHeader : string;
+  table : T2dArrayOfString;
 begin
-    final String[][] table := {
-          {'fitnesse.fixtures.ColumnFixtureTestFixture'},
-          {'no such method?'}
-        };
-    page := TFixtureTest.executeFixture(table);
-    String columnHeader := page.at(0,1,0).body;
-    CheckTrue(columnHeader.indexOf('Could not find method: no such method?.') !:= -1);
+  SetLength(table, 2);
+  SetLength(table[0], 1);
+  SetLength(table[1], 1);
+  table[0][0] := 'fitnesse.fixtures.ColumnFixtureTestFixture';
+  table[1][0] := 'no such method?';
+
+  page := TFixtureTests.executeFixture(table);
+  columnHeader := page.at(0, 1, 0).body;
+  CheckTrue(Pos('Could not find method: no such method?.', columnHeader) <> 0);
 end;
 
 procedure TFriendlyErrorTest.testParseFailure();
 var
-  pageString : String;
-  page  : TParse;
-  fixture : TFixture;
-  fixtureName : String;
+  page : TParse;
+  table : T2dArrayOfString;
+  colTwoResult : string;
 begin
-    final String[][] table := {
-          {'fitnesse.fixtures.ColumnFixtureTestFixture'},
-          {'input','output?'},
-          {'1',     'alpha'}
-        };
-    Parse page := FixtureTest.executeFixture(table);
-    String colTwoResult := page.at(0,2,1).body;
-    CheckTrue(colTwoResult.indexOf('Could not parse: alpha expected type: int') !:= -1);
+  SetLength(table, 3);
+  SetLength(table[0], 1);
+  SetLength(table[1], 2);
+  SetLength(table[2], 2);
+  table[0][0] := 'fitnesse.fixtures.ColumnFixtureTestFixture';
+  table[1][0] := 'input';
+  table[1][1] := 'output?';
+  table[2][0] := '1';
+  table[2][1] := 'alpha';
+  page := TFixtureTests.executeFixture(table);
+  colTwoResult := page.at(0, 2, 1).body;
+  page.Free;
+  CheckTrue(Pos('Could not parse: alpha expected type: Integer', colTwoResult) <> 0);
 end;
 
 procedure TFriendlyErrorTest.testExceptionInMethod();
 var
-  pageString : String;
-  page  : TParse;
-  fixture : TFixture;
-  fixtureName : String;
+  page : TParse;
+  table : T2dArrayOfString;
+  colTwoResult : string;
 begin
-    final String[][] table := {
-          {'fitnesse.fixtures.ColumnFixtureTestFixture'},
-          {'input','exception?'},
-          {'1',    'true'}
-        };
-    Parse page := FixtureTest.executeFixture(table);
-    String colTwoResult := page.at(0,2,1).body;
-    CheckTrue(colTwoResult.indexOf('I thowed up') <> -1);
+  SetLength(table, 3);
+  SetLength(table[0], 1);
+  SetLength(table[1], 2);
+  SetLength(table[2], 2);
+  table[0][0] := 'fitnesse.fixtures.ColumnFixtureTestFixture';
+  table[1][0] := 'input';
+  table[1][1] := 'exception?';
+  table[2][0] := '1';
+  table[2][1] := 'true';
+  page := TFixtureTests.executeFixture(table);
+  colTwoResult := page.at(0, 2, 1).body;
+  CheckTrue(Pos('I thowed up', colTwoResult) <> -1);
 end;
-*)
 
 initialization
 
