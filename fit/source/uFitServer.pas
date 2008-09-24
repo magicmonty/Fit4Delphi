@@ -15,6 +15,7 @@
 // Copyright (c) 2002 Cunningham & Cunningham, Inc.
 // Released under the terms of the GNU General Public License version 2 or later.
 // Ported to Delphi by Salim Nair.
+{$H+}
 unit uFitServer;
 
 interface

@@ -1,46 +1,136 @@
 [Closed Files]
-File_0=TSourceModule,'c:\Source\fit4delphi\fit\source\ColumnFixture.pas',0,1,198,1,217,0,0,,
+File_0=TSourceModule,'C:\Source\fit4delphi\fit\source\ColumnFixture.pas',0,1,82,1,116,0,0,,
 File_1=TSourceModule,'c:\Source\fit4delphi\fit\source\FitMatcher.pas',0,1,130,1,146,0,0,,
-File_2=TSourceModule,'c:\Source\fit4delphi\fit\source\Parse.pas',0,1,236,1,257,0,0,,
-File_3=TSourceModule,'c:\Source\fit4delphi\fit\source\exception\CouldNotParseFitFailureException.pas',0,1,10,1,36,0,0,,
-File_4=TSourceModule,'C:\Source\fit4delphi\dunit\ColumnFixtureTests.pas',0,1,115,1,134,0,0,,
-File_5=TSourceModule,'C:\Source\fit4delphi\fit\source\Method.pas',0,1,1,1,8,0,0,,
-File_6=TSourceModule,'C:\Source\fit4delphi\dunit\FixtureLoaderTest.pas',0,1,74,17,94,0,0,,
-File_7=TSourceModule,'c:\Source\fit4delphi\fit\source\GracefulNamer.pas',0,1,81,1,104,0,0,,
-File_8=TSourceModule,'C:\Source\fit4delphi\fit\source\TimedActionFixture.pas',0,1,1,20,21,0,0,,
-File_9=TSourceModule,'C:\Source\fit4delphi\fit\source\exception\NoSuchFixtureException.pas',0,1,20,1,41,0,0,,
+File_2=TSourceModule,'c:\Source\fit4delphi\fit\source\exception\CouldNotParseFitFailureException.pas',0,1,10,1,36,0,0,,
+File_3=TSourceModule,'C:\Source\fit4delphi\dunit\FixtureLoaderTest.pas',0,1,74,17,94,0,0,,
+File_4=TSourceModule,'c:\Source\fit4delphi\fit\source\GracefulNamer.pas',0,1,81,1,104,0,0,,
+File_5=TSourceModule,'C:\Source\fit4delphi\fit\source\TimedActionFixture.pas',0,1,1,20,21,0,0,,
+File_6=TSourceModule,'C:\Source\fit4delphi\fit\source\exception\NoSuchFixtureException.pas',0,1,20,1,41,0,0,,
 
 [Modules]
-Module0=C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas
-Module1=C:\Source\fit4delphi\fit\fit.bdsproj
-Module2=c:\Source\fit4delphi\fit\source\CellComparator.pas
-Module3=C:\Source\fit4delphi\dunit\FixtureTests.pas
-Module4=C:\Source\fit4delphi\fit\source\Fixture.pas
-Module5=c:\Source\fit4delphi\fit\source\Binding.pas
-Module6=c:\Source\fit4delphi\fit\source\TypeAdapter.pas
-Module7=c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas
-Module8=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\Variants.pas
-Module9=C:\Source\fit4delphi\fitnesse\fixtures\ColumnFixtureTestFixture.pas
+Module0=C:\Source\fit4delphi\fit\source\uFitServer.pas
+Module1=C:\Source\fit4delphi\fitServer\fitServer.bdsproj
+Module2=C:\Source\fit4delphi\fit\fit.bdsproj
+Module3=C:\Source\fit4delphi\fitrunner\fitrunner.bdsproj
+Module4=C:\Source\fit4delphi\fitnesse\fixtures\RowEntryFixture.pas
+Module5=C:\Source\fit4delphi\fitnesse\fixtures\TableFixture.pas
+Module6=C:\Source\fit4delphi\fit\source\FileRunner.pas
+Module7=C:\Source\fit4delphi\dunit\FileRunnerTests.pas
+Module8=C:\Source\fit4delphi\fit\source\Fixture.pas
+Module9=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\SysUtils.pas
 Module10=C:\Source\fit4delphi\fit\source\FixtureLoader.pas
-Module11=C:\Source\fit4delphi\fit\source\FixtureName.pas
-Module12=C:\Source\fit4delphi\fit\source\ActionFixture.pas
-Module13=C:\Source\fit4delphi\fit\source\decorator\util\Table.pas
-Module14=C:\Source\fit4delphi\fit\source\decorator\util\Delta.pas
-Module15=C:\Source\fit4delphi\fit\source\decorator\FixtureDecorator.pas
-Module16=c:\program files\borland\bds\4.0\source\Win32\rtl\common\Classes.pas
-Module17=C:\Source\fit4delphi\fit\source\decorator\CopyAndAppendLastRow.pas
-Module18=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\System.pas
-Module19=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\SysUtils.pas
-Count=20
+Module11=c:\source\fit4delphi\fit\source\Parse.pas
+Module12=C:\Source\fit4delphi\fit\source\DetailedRTTI.pas
+Module13=C:\Source\fit4delphi\fit\source\Method.pas
+Module14=c:\program files\borland\bds\4.0\source\Win32\rtl\common\ObjAuto.pas
+Module15=c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas
+Module16=C:\Source\fit4delphi\dunit\ColumnFixtureTests.pas
+Module17=c:\Source\fit4delphi\fit\source\Binding.pas
+Module18=C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas
+Module19=c:\Source\fit4delphi\fit\source\CellComparator.pas
+Module20=C:\Source\fit4delphi\dunit\FixtureTests.pas
+Module21=c:\Source\fit4delphi\fit\source\TypeAdapter.pas
+Module22=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\Variants.pas
+Module23=C:\Source\fit4delphi\fitnesse\fixtures\ColumnFixtureTestFixture.pas
+Module24=C:\Source\fit4delphi\fit\source\FixtureName.pas
+Module25=C:\Source\fit4delphi\fit\source\ActionFixture.pas
+Module26=C:\Source\fit4delphi\fit\source\decorator\util\Table.pas
+Module27=C:\Source\fit4delphi\fit\source\decorator\util\Delta.pas
+Module28=C:\Source\fit4delphi\fit\source\decorator\FixtureDecorator.pas
+Module29=c:\program files\borland\bds\4.0\source\Win32\rtl\common\Classes.pas
+Module30=C:\Source\fit4delphi\fit\source\decorator\CopyAndAppendLastRow.pas
+Module31=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\System.pas
+Count=32
 EditWindowCount=1
+
+[C:\Source\fit4delphi\fit\source\uFitServer.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fitServer\fitServer.bdsproj]
+ModuleType=TBaseProject
+
+[C:\Source\fit4delphi\fit\fit.bdsproj]
+ModuleType=TBaseProject
+
+[C:\Source\fit4delphi\fitrunner\fitrunner.bdsproj]
+ModuleType=TBaseProject
+
+[C:\Source\fit4delphi\fitnesse\fixtures\RowEntryFixture.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fitnesse\fixtures\TableFixture.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fit\source\FileRunner.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\dunit\FileRunnerTests.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fit\source\Fixture.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files\borland\bds\4.0\source\Win32\rtl\sys\SysUtils.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fit\source\FixtureLoader.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\source\fit4delphi\fit\source\Parse.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fit\source\DetailedRTTI.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\fit\source\Method.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files\borland\bds\4.0\source\Win32\rtl\common\ObjAuto.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Source\fit4delphi\dunit\ColumnFixtureTests.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\Source\fit4delphi\fit\source\Binding.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
 
 [C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
-
-[C:\Source\fit4delphi\fit\fit.bdsproj]
-ModuleType=TBaseProject
 
 [c:\Source\fit4delphi\fit\source\CellComparator.pas]
 ModuleType=TSourceModule
@@ -52,22 +142,7 @@ ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
 
-[C:\Source\fit4delphi\fit\source\Fixture.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[c:\Source\fit4delphi\fit\source\Binding.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [c:\Source\fit4delphi\fit\source\TypeAdapter.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -78,11 +153,6 @@ FormState=0
 FormOnTop=0
 
 [C:\Source\fit4delphi\fitnesse\fixtures\ColumnFixtureTestFixture.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[C:\Source\fit4delphi\fit\source\FixtureLoader.pas]
 ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
@@ -127,14 +197,9 @@ ModuleType=TSourceModule
 FormState=0
 FormOnTop=0
 
-[c:\program files\borland\bds\4.0\source\Win32\rtl\sys\SysUtils.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [EditWindow0]
-ViewCount=20
-CurrentEditView=C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas
+ViewCount=32
+CurrentEditView=C:\Source\fit4delphi\fit\source\uFitServer.pas
 View0=0
 View1=1
 View2=2
@@ -155,6 +220,18 @@ View16=16
 View17=17
 View18=18
 View19=19
+View20=20
+View21=21
+View22=22
+View23=23
+View24=24
+View25=25
+View26=26
+View27=27
+View28=28
+View29=29
+View30=30
+View31=31
 PercentageSizes=1
 Create=1
 Visible=1
@@ -173,24 +250,24 @@ MessageView=MessageView@EditWindow0
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1906
-LeftPanelClients=DockSite8,DockSite6
-LeftPanelData=00000800010100000000B41A0000000000000172070000000000000100000000C50D000009000000446F636B536974653801000000006121000009000000446F636B5369746536FFFFFFFF
+LeftPanelClients=DockSite0,DockSite2
+LeftPanelData=0000080001010000000080130000000000000172070000000000000100000000C50D000009000000446F636B536974653001000000006018000009000000446F636B5369746532FFFFFFFF
 RightPanelSize=2258
-RightPanelClients=ToolForm,DockSite5
-RightPanelData=00000800010100000000B41A00000000000001D20800000000000001000000006511000009000000446F636B536974653501000000006121000008000000546F6F6C466F726DFFFFFFFF
-BottomPanelSize=0
-BottomPanelClients=ToDo List,DockSite7,DockSite4,DockSite0
-BottomPanelData=000008000102040000000E000000546F446F4C69737457696E646F7709000000446F636B536974653709000000446F636B536974653409000000446F636B53697465307C30000000000000026707000000000000FFFFFFFF
+RightPanelClients=ToolForm,DockSite3
+RightPanelData=00000800010100000000801300000000000001D20800000000000001000000006511000009000000446F636B536974653301000000006018000008000000546F6F6C466F726DFFFFFFFF
+BottomPanelSize=2275
+BottomPanelClients=ToDo List,DockSite7,DockSite1,DockSite4
+BottomPanelData=000008000102030000000E000000546F446F4C69737457696E646F7709000000446F636B536974653709000000446F636B53697465347C3000000000000002E30800000000000001000000007C30000009000000446F636B5369746531FFFFFFFF
 BottomMiddlePanelSize=0
-BottomMiddlePanelClients=DockSite3,DockSite2,DockSite1
-BottomMiddelPanelData=0000080001000300000009000000446F636B536974653309000000446F636B536974653209000000446F636B53697465310000000000000000000000000000000000FFFFFFFF
+BottomMiddlePanelClients=DockSite6,DockSite8
+BottomMiddelPanelData=0000080001000200000009000000446F636B536974653609000000446F636B53697465380000000000000000000000000000000000FFFFFFFF
 
 [View0]
 CustomEditViewType=TEditView
 Module=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\SysUtils.pas
-CursorX=12
-CursorY=16135
-TopLine=16117
+CursorX=1
+CursorY=231
+TopLine=212
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -209,6 +286,94 @@ EditViewName=C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas
 
 [View2]
 CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fitrunner\fitrunner.dpr
+CursorX=1
+CursorY=18
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fitrunner\fitrunner.dpr
+
+[View3]
+CustomEditViewType=TEditView
+Module=c:\source\fit4delphi\fit\source\Parse.pas
+CursorX=1
+CursorY=252
+TopLine=231
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=c:\source\fit4delphi\fit\source\Parse.pas
+
+[View4]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\dunit\ColumnFixtureTests.pas
+CursorX=1
+CursorY=118
+TopLine=93
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\dunit\ColumnFixtureTests.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fit\source\FileRunner.pas
+CursorX=1
+CursorY=139
+TopLine=120
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fit\source\FileRunner.pas
+
+[View6]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fitnesse\fixtures\TableFixture.pas
+CursorX=38
+CursorY=20
+TopLine=6
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fitnesse\fixtures\TableFixture.pas
+
+[View7]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fitnesse\fixtures\RowEntryFixture.pas
+CursorX=40
+CursorY=20
+TopLine=10
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fitnesse\fixtures\RowEntryFixture.pas
+
+[View8]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fitServer\fitServer.dpr
+CursorX=17
+CursorY=14
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fitServer\fitServer.dpr
+
+[View9]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fit\source\uFitServer.pas
+CursorX=6
+CursorY=18
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fit\source\uFitServer.pas
+
+[View10]
+CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\dunit\FixtureTests.pas
 CursorX=1
 CursorY=253
@@ -218,7 +383,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\dunit\FixtureTests.pas
 
-[View3]
+[View11]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fitnesse\fixtures\ColumnFixtureTestFixture.pas
 CursorX=12
@@ -229,18 +394,62 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fitnesse\fixtures\ColumnFixtureTestFixture.pas
 
-[View4]
+[View12]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\Fixture.pas
-CursorX=1
-CursorY=410
-TopLine=379
+CursorX=8
+CursorY=640
+TopLine=631
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\Fixture.pas
 
-[View5]
+[View13]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\dunit\FileRunnerTests.pas
+CursorX=26
+CursorY=77
+TopLine=54
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\dunit\FileRunnerTests.pas
+
+[View14]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fit\source\Method.pas
+CursorX=1
+CursorY=56
+TopLine=37
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fit\source\Method.pas
+
+[View15]
+CustomEditViewType=TEditView
+Module=c:\program files\borland\bds\4.0\source\Win32\rtl\common\ObjAuto.pas
+CursorX=27
+CursorY=38
+TopLine=19
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=c:\program files\borland\bds\4.0\source\Win32\rtl\common\ObjAuto.pas
+
+[View16]
+CustomEditViewType=TEditView
+Module=C:\Source\fit4delphi\fit\source\DetailedRTTI.pas
+CursorX=59
+CursorY=115
+TopLine=97
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Source\fit4delphi\fit\source\DetailedRTTI.pas
+
+[View17]
 CustomEditViewType=TEditView
 Module=c:\Source\fit4delphi\fit\source\CellComparator.pas
 CursorX=1
@@ -251,18 +460,18 @@ Elisions=
 Bookmarks=
 EditViewName=c:\Source\fit4delphi\fit\source\CellComparator.pas
 
-[View6]
+[View18]
 CustomEditViewType=TEditView
 Module=c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas
-CursorX=1
-CursorY=23
-TopLine=1
+CursorX=5
+CursorY=169
+TopLine=138
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=c:\program files\borland\bds\4.0\source\Win32\rtl\common\TypInfo.pas
 
-[View7]
+[View19]
 CustomEditViewType=TEditView
 Module=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\Variants.pas
 CursorX=15
@@ -273,7 +482,7 @@ Elisions=
 Bookmarks=
 EditViewName=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\Variants.pas
 
-[View8]
+[View20]
 CustomEditViewType=TEditView
 Module=c:\Source\fit4delphi\fit\source\TypeAdapter.pas
 CursorX=44
@@ -284,29 +493,29 @@ Elisions=
 Bookmarks=
 EditViewName=c:\Source\fit4delphi\fit\source\TypeAdapter.pas
 
-[View9]
+[View21]
 CustomEditViewType=TEditView
 Module=c:\Source\fit4delphi\fit\source\Binding.pas
 CursorX=1
-CursorY=439
-TopLine=409
+CursorY=325
+TopLine=298
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=c:\Source\fit4delphi\fit\source\Binding.pas
 
-[View10]
+[View22]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\FixtureLoader.pas
 CursorX=1
-CursorY=90
-TopLine=67
+CursorY=118
+TopLine=99
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\FixtureLoader.pas
 
-[View11]
+[View23]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\FixtureName.pas
 CursorX=1
@@ -317,7 +526,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\FixtureName.pas
 
-[View12]
+[View24]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\ActionFixture.pas
 CursorX=1
@@ -328,7 +537,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\ActionFixture.pas
 
-[View13]
+[View25]
 CustomEditViewType=TEditView
 Module=c:\program files\borland\bds\4.0\source\Win32\rtl\common\Classes.pas
 CursorX=1
@@ -339,7 +548,7 @@ Elisions=
 Bookmarks=
 EditViewName=c:\program files\borland\bds\4.0\source\Win32\rtl\common\Classes.pas
 
-[View14]
+[View26]
 CustomEditViewType=TEditView
 Module=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\System.pas
 CursorX=27
@@ -350,7 +559,7 @@ Elisions=
 Bookmarks=
 EditViewName=c:\program files\borland\bds\4.0\source\Win32\rtl\sys\System.pas
 
-[View15]
+[View27]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\decorator\CopyAndAppendLastRow.pas
 CursorX=16
@@ -361,7 +570,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\decorator\CopyAndAppendLastRow.pas
 
-[View16]
+[View28]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\decorator\FixtureDecorator.pas
 CursorX=11
@@ -372,7 +581,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\decorator\FixtureDecorator.pas
 
-[View17]
+[View29]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\decorator\util\Table.pas
 CursorX=5
@@ -383,7 +592,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\decorator\util\Table.pas
 
-[View18]
+[View30]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\source\decorator\util\Delta.pas
 CursorX=1
@@ -394,11 +603,11 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\source\decorator\util\Delta.pas
 
-[View19]
+[View31]
 CustomEditViewType=TEditView
 Module=C:\Source\fit4delphi\fit\fit.dpk
-CursorX=2
-CursorY=92
+CursorX=57
+CursorY=76
 TopLine=65
 LeftCol=1
 Elisions=
@@ -406,8 +615,8 @@ Bookmarks=
 EditViewName=C:\Source\fit4delphi\fit\fit.dpk
 
 [Watches]
-Count=11
-Watch0='cells.text',256,0,18,1,1,'Watches'
+Count=16
+Watch0='args.text',256,0,18,1,1,'Watches'
 Watch1='e.message',256,0,18,1,0,'Watches'
 Watch2='heads.size',256,0,18,1,1,'Watches'
 Watch3='self.ClassType',256,0,18,1,1,'Watches'
@@ -418,9 +627,14 @@ Watch7='ParamCount',256,0,18,1,1,'Watches'
 Watch8='heads.size',256,0,18,1,1,'Watches'
 Watch9='each',256,0,18,1,0,'Watches'
 Watch10='page.text',256,0,18,1,1,'Watches'
+Watch11='ReturnInfo.ReturnType',256,0,18,1,0,'Watches'
+Watch12='PTypeInfo(ReturnInfo.ReturnType)',256,0,18,1,1,'Watches'
+Watch13='ReturnInfo.ReturnType^.Kind',256,0,18,1,1,'Watches'
+Watch14='self.ReturnType^.Kind',256,0,18,1,0,'Watches'
+Watch15='PTypeInfo(result.ReturnType)',256,0,18,1,0,'Watches'
 
 [WatchWindow]
-WatchColumnWidth=120
+WatchColumnWidth=216
 WatchShowColumnHeaders=1
 PercentageSizes=1
 Create=1
@@ -494,12 +708,12 @@ State=0
 Left=0
 Top=479
 Width=2258
-Height=4125
+Height=1667
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2258
-ClientHeight=4125
-TBDockHeight=8875
+ClientHeight=1667
+TBDockHeight=6802
 LRDockWidth=2258
 Dockable=1
 StayOnTop=0
@@ -592,12 +806,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=2273
-Height=1948
+Width=9867
+Height=1823
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2273
-ClientHeight=1948
+ClientWidth=9867
+ClientHeight=1823
 TBDockHeight=2312
 LRDockWidth=2828
 Dockable=1
@@ -611,12 +825,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=2273
-Height=1948
+Width=9867
+Height=1823
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2273
-ClientHeight=1948
+ClientWidth=9867
+ClientHeight=1823
 TBDockHeight=3208
 LRDockWidth=2828
 Dockable=1
@@ -629,7 +843,7 @@ Visible=0
 Docked=1
 State=0
 Left=-205
-Top=-924
+Top=-866
 Width=3672
 Height=1156
 MaxLeft=-1
@@ -655,8 +869,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-571
-Top=777
+Left=-693
+Top=6815
 Width=273
 Height=365
 MaxLeft=-1
@@ -677,8 +891,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1663
-Top=-4829
+Left=-5156
+Top=-10103
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -696,8 +910,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1663
-Top=-4829
+Left=-5156
+Top=-10103
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -715,8 +929,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1663
-Top=-4829
+Left=-5156
+Top=-10103
 Width=3562
 Height=3000
 MaxLeft=-1
@@ -734,8 +948,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1663
-Top=-4829
+Left=-5156
+Top=-10103
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -753,8 +967,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1663
-Top=-4829
+Left=-5156
+Top=-10103
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -791,8 +1005,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-428
-Top=-3891
+Left=-1042
+Top=-2585
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -810,8 +1024,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-428
-Top=-3891
+Left=-1042
+Top=-2585
 Width=13602
 Height=208
 MaxLeft=-1
@@ -829,8 +1043,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-2162
-Top=-5440
+Left=-13175
+Top=-24253
 Width=3562
 Height=4833
 MaxLeft=-1
@@ -848,8 +1062,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-2162
-Top=-5440
+Left=-13175
+Top=-24253
 Width=3562
 Height=2302
 MaxLeft=-1
@@ -889,11 +1103,11 @@ State=0
 Left=0
 Top=0
 Width=1844
-Height=5010
+Height=2552
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1844
-ClientHeight=5010
+ClientHeight=2552
 TBDockHeight=406
 LRDockWidth=1906
 Dockable=1
@@ -1159,8 +1373,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-201
-Top=-329
+Left=-571
+Top=-165
 Width=1508
 Height=1094
 MaxLeft=-1
@@ -1175,17 +1389,17 @@ StayOnTop=0
 [MessageView@EditWindow0]
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
-Left=336
-Top=-3
-Width=4328
-Height=2229
+Left=0
+Top=0
+Width=9867
+Height=1823
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4328
-ClientHeight=2229
+ClientWidth=9867
+ClientHeight=1823
 TBDockHeight=2229
 LRDockWidth=4328
 Dockable=1
@@ -1217,90 +1431,93 @@ DockHostCount=9
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
-Left=-5
-Top=-956
-Width=3508
-Height=2000
+Left=0
+Top=23
+Width=1906
+Height=3479
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3508
-ClientHeight=2000
-TBDockHeight=2000
-LRDockWidth=3508
+ClientWidth=1906
+ClientHeight=3479
+TBDockHeight=1802
+LRDockWidth=1906
 Dockable=1
 StayOnTop=0
 TabPosition=1
-TabDockClients=QAView,MetricsView
+ActiveTabID=StructureView
+TabDockClients=StructureView,frmCaliberMain
 
 [DockSite1]
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
-Left=-252
-Top=-956
-Width=3508
-Height=3396
+Left=0
+Top=23
+Width=9930
+Height=2188
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3508
-ClientHeight=3396
-TBDockHeight=3396
+ClientWidth=9930
+ClientHeight=2188
+TBDockHeight=2188
 LRDockWidth=3508
 Dockable=1
 StayOnTop=0
 TabPosition=1
-TabDockClients=PendingCheckinsView,PendingCheckoutsView,ShortcutsView,GantrySearchView,GantryResultsView
+ActiveTabID=MessageView@EditWindow0
+TabDockClients=MessageView@EditWindow0,DockSite5,FindReferencsForm,RefactoringForm
 
 [DockSite2]
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
-Left=-252
-Top=-956
-Width=3508
-Height=2229
+Left=0
+Top=384
+Width=1906
+Height=2656
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3508
-ClientHeight=2229
-TBDockHeight=2229
-LRDockWidth=3508
+ClientWidth=1906
+ClientHeight=2656
+TBDockHeight=5115
+LRDockWidth=1906
 Dockable=1
 StayOnTop=0
 TabPosition=1
-TabDockClients=UsagesView,RefactoringsView
+ActiveTabID=PropertyInspector
+TabDockClients=PropertyInspector,TemplateView
 
 [DockSite3]
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
-Left=-252
-Top=-956
-Width=2336
-Height=2312
+Left=0
+Top=23
+Width=2258
+Height=4469
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2336
-ClientHeight=2312
-TBDockHeight=2312
-LRDockWidth=2336
+ClientWidth=2258
+ClientHeight=4469
+TBDockHeight=6323
+LRDockWidth=2258
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=FindReferencsForm
-TabDockClients=RefactoringForm,FindReferencsForm
+ActiveTabID=ProjectManager
+TabDockClients=ProjectManager,ModelViewTool,DataExplorer
 
 [DockSite4]
 DockSiteType=1
@@ -1327,49 +1544,28 @@ TabDockClients=BreakpointWindow,CallStackWindow,WatchWindow,ThreadStatusWindow,D
 
 [DockSite5]
 DockSiteType=1
-PercentageSizes=1
-Create=1
-Visible=1
-Docked=1
-State=0
-Left=0
-Top=23
-Width=2258
-Height=4469
-MaxLeft=-1
-MaxTop=-1
-ClientWidth=2258
-ClientHeight=4469
-TBDockHeight=6323
-LRDockWidth=2258
-Dockable=1
-StayOnTop=0
-TabPosition=1
-ActiveTabID=ProjectManager
-TabDockClients=ProjectManager,ModelViewTool,DataExplorer
 
 [DockSite6]
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
-Left=0
-Top=384
-Width=1906
-Height=5115
+Left=-252
+Top=-956
+Width=3508
+Height=2229
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1906
-ClientHeight=5115
-TBDockHeight=5115
-LRDockWidth=1906
+ClientWidth=3508
+ClientHeight=2229
+TBDockHeight=2229
+LRDockWidth=3508
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=PropertyInspector
-TabDockClients=PropertyInspector,TemplateView
+TabDockClients=UsagesView,RefactoringsView
 
 [DockSite7]
 DockSiteType=1
@@ -1381,41 +1577,40 @@ State=0
 Left=-89
 Top=3
 Width=3508
-Height=2260
+Height=2000
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3508
-ClientHeight=2260
-TBDockHeight=2260
+ClientHeight=2000
+TBDockHeight=2000
 LRDockWidth=3508
 Dockable=1
 StayOnTop=0
 TabPosition=1
-TabDockClients=MessageView@EditWindow0
+TabDockClients=QAView,MetricsView
 
 [DockSite8]
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
-Left=0
-Top=23
-Width=1906
-Height=3479
+Left=-247
+Top=0
+Width=3508
+Height=3396
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1906
-ClientHeight=3479
-TBDockHeight=1802
-LRDockWidth=1906
+ClientWidth=3508
+ClientHeight=3396
+TBDockHeight=3396
+LRDockWidth=3508
 Dockable=1
 StayOnTop=0
 TabPosition=1
-ActiveTabID=StructureView
-TabDockClients=StructureView,frmCaliberMain
+TabDockClients=PendingCheckinsView,PendingCheckoutsView,ShortcutsView,GantrySearchView,GantryResultsView
 
 [ActiveProject]
-ActiveProject=6
+ActiveProject=5
 

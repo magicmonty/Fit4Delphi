@@ -6,7 +6,7 @@ uses
   Forms,
   Classes,
   sysUtils,
-  uFitServer in 'source\uFitServer.pas';
+  uFitServer in '..\fit\source\uFitServer.pas';
 
 {$R *.res}
 
