@@ -12,6 +12,7 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
+{$H+}
 unit ParseException;
 
 interface

@@ -1,4 +1,5 @@
 // Author David Glassborow
+{$H+}
 unit DetailedRTTI;
 
   // Some functions for playing with rich RTTI in objects

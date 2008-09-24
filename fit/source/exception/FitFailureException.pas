@@ -22,6 +22,7 @@
  * Released under the terms of the GNU General Public License version 2 or later.
  *
  *)
+{$H+}
 unit FitFailureException;
 
 interface

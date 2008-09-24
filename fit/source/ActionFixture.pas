@@ -16,6 +16,7 @@
 // Copyright (c) 2002 Cunningham & Cunningham, Inc.
 // Released under the terms of the GNU General Public License version 2 or later.package fit;
 // Derived from ActionFixture.java by Martin Chernenkoff, CHI Software Design
+{$H+}
 unit ActionFixture;
 
 interface
@@ -54,6 +55,7 @@ var
 implementation
 
 uses
+  DetailedRTTI,
   NoSuchMethodFitFailureException,
   FitFailureException;
 
@@ -84,13 +86,12 @@ begin
   end;
 end;
 
-// TODO
-
 procedure TActionFixture.Check;
 var
-  //  theMethod : TMethod;
+  theMethod : TMethod;
   adapter : TTypeAdapter;
   checkValueCell : TParse;
+  type_ : TTypeKind;
 begin
   (*
     public void check() throws Throwable
@@ -113,15 +114,13 @@ begin
       check(checkValueCell, adapter);
     }
   *)
-  //  theMethod := method(0);
-  //  Class type = theMethod.getReturnType();
+  theMethod := method(0);
+  type_ := theMethod.ReturnType;
   try
-    // TODO I'm using properties, not methods to retrieve value for check operation
-    //  adapter := TTypeAdapter.AdapterOn(actor, theMethod);
-    adapter := TTypeAdapter.AdapterOn(actor, TField.Create(actor.ClassType, camel(cells.more.text))); //TODO
+    adapter := TTypeAdapter.AdapterOn(actor, theMethod);
   except
     on e : Exception do
-      raise TFitFailureException.Create('Can not parse return type: '); //TODO + type.getName());
+      raise TFitFailureException.Create('Can not parse return type: ' + TTypeKindNames[type_]);
   end;
   checkValueCell := cells.more.more;
   if (checkValueCell = nil) then

@@ -26,11 +26,10 @@ type
   protected
     Fmsg : String;
     caller : TFixture;
-    function GetMessage: Variant;
   public
     constructor Create (msg: String; caller : TFixture); reintroduce; overload;
   published
-    property Message: Variant read GetMessage;
+    function Message: String;
     procedure OK;
   end;
 
@@ -67,7 +66,7 @@ begin
   ActionFixture.actor := caller;
 end;
 
-function TDialog.GetMessage: Variant;
+function TDialog.Message: String;
 begin
   result := FMsg;
 end;

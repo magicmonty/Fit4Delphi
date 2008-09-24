@@ -11,6 +11,7 @@
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
+{$H+}
 unit Method;
 
 interface
@@ -90,7 +91,7 @@ begin
       Result := ObjectInvoke(theInstance, MethodInfo, ParamIndexes, Params);
   except
     on E : Exception do
-      Exception.CreateFmt('"%s" called with invalid arguments: %s', [MethodInfo.Name, E.Message]);
+      raise Exception.CreateFmt('"%s" called with invalid arguments: %s', [MethodInfo.Name, E.Message]);
   end;
 end;
 

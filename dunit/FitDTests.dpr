@@ -14,7 +14,7 @@ uses
   windows,
   ColumnFixtureTests in 'ColumnFixtureTests.pas',
   fileRunnerTests in 'fileRunnerTests.pas',
-  uFitServer in '..\fitServer\source\uFitServer.pas',
+  uFitServer in '..\fit\source\uFitServer.pas',
   uFitServerTest in 'uFitServerTest.pas',
   RowFixtureTests in 'RowFixtureTests.pas',
   Browser in '..\eg\music\source\Browser.pas',
@@ -72,7 +72,8 @@ uses
   FriendlyErrorTest in 'FriendlyErrorTest.pas',
   ColumnFixtureTestFixture in '..\fitnesse\fixtures\ColumnFixtureTestFixture.pas',
   TableFixture in '..\fitnesse\fixtures\TableFixture.pas',
-  RowEntryFixture in '..\fitnesse\fixtures\RowEntryFixture.pas';
+  RowEntryFixture in '..\fitnesse\fixtures\RowEntryFixture.pas',
+  ActionFixtureTest in 'ActionFixtureTest.pas';
 
 {$R *.RES}
 

@@ -11,6 +11,7 @@
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
+{$H+}
 unit Field;
 
 interface
@@ -49,11 +50,16 @@ constructor TField.Create(theClass : TClass; const aFld : string);
 var
   thePropInfo : PPropInfo;
 begin
-  thePropInfo := GetPropInfo(theClass.classInfo, aFld, [tkUnknown, tkInteger, tkChar, tkEnumeration, tkFloat,
+  {$IFDEF UNICODE}
+  thePropInfo := GetPropInfo( theClass.classInfo, aFld, [tkUnknown, tkInteger, tkChar, tkEnumeration, tkFloat,
+    tkString, tkSet, tkClass, tkMethod, tkWChar, tkLString, tkWString, tkUString,
+    tkVariant, tkArray, tkRecord, tkInterface, tkInt64, tkDynArray ] );
+  {$ELSE}
+  thePropInfo := GetPropInfo( theClass.classInfo, aFld, [tkUnknown, tkInteger, tkChar, tkEnumeration, tkFloat,
     tkString, tkSet, tkClass, tkMethod, tkWChar, tkLString, tkWString,
-      tkVariant, tkArray, tkRecord, tkInterface, tkInt64, tkDynArray]);
+    tkVariant, tkArray, tkRecord, tkInterface, tkInt64, tkDynArray ] );
+  {$ENDIF}
   self.Create(aFld, thePropInfo.PropType^.Kind);
-
 end;
 
 procedure TField.doSet(theInstance : TFixture; const theValue : variant);

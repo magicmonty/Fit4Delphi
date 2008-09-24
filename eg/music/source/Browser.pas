@@ -25,37 +25,25 @@ type
   TBrowser = class (TFixture)
   protected
     FSongIndex: Integer;
-    function GetTotalSongs: Variant;
-    function GetTitle : Variant;
-    function GetSongs : Variant;
-    function GetAlbum : Variant;
-    function GetArtist : Variant;
-    function GetSelectedSongs : Variant;
-    function GetStatus : Variant;
-    function GetTrack : Variant;
-    function GetYear: Variant;
-    function GetTime : Variant;
-    function GetRemaining : Variant;
-    function GetPlaying : Variant;
   public
     constructor Create; override;
     destructor Destroy; override;
   published
     // used with enter
     procedure LoadLibrary(FileName:String);
-    property Title : Variant read GetTitle;
-    property Songs : Variant read GetSongs;
-    property Album : Variant read GetAlbum;
-    property Artist : Variant read GetArtist;
+    function Title : String;
+    function Songs : Variant;
+    function Album : Variant;
+    function Artist : Variant;
     procedure Select(Value:String);
-    property SelectedSongs : Variant read GetSelectedSongs;
-    property Status : Variant read GetStatus;
-    property Track : Variant read GetTrack;
-    property Year: Variant read GetYear;
-    property Time : Variant read GetTime;
-    property Remaining : Variant read GetRemaining;
-    property Playing : Variant read GetPlaying;
-    property TotalSongs: Variant read GetTotalSongs;
+    function SelectedSongs : Integer;
+    function Status : Variant;
+    function Track : Variant;
+    function Year: Integer;
+    function Time : Variant;
+    function Remaining : Variant;
+    function Playing : Variant;
+    function TotalSongs: Variant;
     // used with check
     // used with select
     procedure Pause;
@@ -86,23 +74,23 @@ begin
   inherited;
 end;
 
-function TBrowser.GetAlbum: Variant;
+function TBrowser.Album: Variant;
 begin
   result := MusicLibrary.SelectedSong.album;
 end;
 
-function TBrowser.GetArtist: Variant;
+function TBrowser.Artist: Variant;
 begin
   result := MusicLibrary.SelectedSong.artist;
 end;
 
 
-function TBrowser.GetTitle: Variant;
+function TBrowser.Title: String;
 begin
   result := MusicLibrary.SelectedSong.title;
 end;
 
-function TBrowser.GetTime: Variant;
+function TBrowser.Time: Variant;
 begin
   result :=   MusicLibrary.SelectedSong.Time;
 end;
@@ -119,17 +107,17 @@ begin
   MusicLibrary.select(StrToInt(Value));
 end;
 
-function TBrowser.GetTotalSongs: Variant;
+function TBrowser.TotalSongs: Variant;
 begin
   result := MusicLibrary.Count;
 end;
 
-function TBrowser.GetYear: Variant;
+function TBrowser.Year: Integer;
 begin
   result := MusicLibrary.SelectedSong.year;
 end;
 
-function TBrowser.GetTrack: Variant;
+function TBrowser.Track: Variant;
 begin
   result := MusicLibrary.SelectedSong.track;
 end;
@@ -144,7 +132,7 @@ begin
   MusicPlayer.Play(MusicLibrary.looking);
 end;
 
-function TBrowser.GetStatus: Variant;
+function TBrowser.Status: Variant;
 begin
   result := Music.status;
 end;
@@ -154,12 +142,12 @@ begin
   MusicPlayer.pause;
 end;
 
-function TBrowser.GetPlaying: Variant;
+function TBrowser.Playing: Variant;
 begin
   result := MusicPlayer.playing.title;
 end;
 
-function TBrowser.GetRemaining: Variant;
+function TBrowser.Remaining: Variant;
 begin
   result := FloatToStr(MusicPlayer.minutesRemaining);
 end;
@@ -174,7 +162,7 @@ begin
   MusicLibrary.findAlbum(MusicLibrary.looking.album);
 end;
 
-function TBrowser.GetSelectedSongs: Variant;
+function TBrowser.SelectedSongs: Integer;
 begin
   result := MusicLibrary.displayCount;
 end;
@@ -184,7 +172,7 @@ begin
   MusicLibrary.FindAll;
 end;
 
-function TBrowser.GetSongs: Variant;
+function TBrowser.Songs: Variant;
 begin
 
 end;

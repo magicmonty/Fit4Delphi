@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -20,6 +20,7 @@ Copyright (c) 2002 Cunningham & Cunningham, Inc.
 Derived from Fixture.java by Martin Chernenkoff, CHI Software Design
 Released under the terms of the GNU General Public License version 2 or later.
 *}
+{$H+}
 unit Fixture;
 
 interface
@@ -94,7 +95,9 @@ uses
   IniFiles,
   FixtureLoader,
   CellComparator,
-  FitFailureException, StringTokenizer, Runtime;
+  FitFailureException,
+  StringTokenizer,
+  Runtime;
 
 var
   symbols : THashedStringList;
@@ -115,11 +118,11 @@ end;
 
 destructor TFixture.Destroy;
 begin
-//  Counts.Free;
+  //  Counts.Free;
   listener := nil;
   FBPLList.Free;
   args.Free;
-//  summary.Free;
+  //  summary.Free;
   inherited;
 end;
 
@@ -299,6 +302,7 @@ begin
     //      final StringWriter buf = new StringWriter();
     //      exception.printStackTrace(new PrintWriter(buf));
     //      cell.addToBody("<hr><pre><div class=\"fit_stacktrace\">" + (buf.toString()) + "</div></pre>");
+    cell.addToBody('<hr><pre><div class="fit_stacktrace">' + e.Message + '</div></pre>');
   end;
   cell.addToTag(' class="error"');
   counts.exceptions := counts.exceptions + 1;
@@ -324,21 +328,12 @@ procedure TFixture.doRows(Rows : TParse);
 var
   more : TParse;
 begin
-  (*
-      public void doRows(Parse rows) {
-          while (rows != null) {
-              Parse more = rows.more;
-              doRow(rows);
-              rows = more;
-          }
-      }
-  *)
   while rows <> nil do
   begin
     more := rows.more;
     doRow(rows);
     rows := more;
-  end; // while
+  end;
 end;
 
 procedure TFixture.doTable(table : TParse);
@@ -512,7 +507,11 @@ begin
       }
   *)
   case aType of
-    tkString :
+{$IFDEF UNICODE}
+    tkString, tkLString, tkWString, tkUString :
+{$ELSE}
+    tkString, tkLString, tkWString :
+{$ENDIF}
       begin
         if (AnsiSameText(s, 'null')) then
           result := null
@@ -597,7 +596,7 @@ function TFixture.camel(name : string) : string;
 var
   b, token : string;
   t : TStringTokenizer;
-  i: Integer;
+  i : Integer;
 begin
   (*
       public static String camel (String name) {
@@ -618,22 +617,22 @@ begin
   for i := 0 to t.Count - 1 do
   begin
     token := t[i];
-    b := b + UpperCase(Copy(token, 1, 1));      // replace spaces with camelCase
+    b := b + UpperCase(Copy(token, 1, 1)); // replace spaces with camelCase
     b := b + Copy(token, 2, MaxInt);
   end;
   t.Free;
   Result := b;
-(*
-  StrTok(name);
-  sToken := StrTok('', ' ');
-  while sToken <> '' do
-  begin
-    b := b + sToken;
+  (*
+    StrTok(name);
     sToken := StrTok('', ' ');
-    sToken := Copy(sToken, 1, 1) + Copy(sToken, 2, length(sToken) - 1);
-  end;
-  result := b;
-*)
+    while sToken <> '' do
+    begin
+      b := b + sToken;
+      sToken := StrTok('', ' ');
+      sToken := Copy(sToken, 1, 1) + Copy(sToken, 2, length(sToken) - 1);
+    end;
+    result := b;
+  *)
 end;
 
 function TFixture.doLabel(s : string) : string;

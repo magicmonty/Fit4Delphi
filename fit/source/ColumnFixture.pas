@@ -17,6 +17,7 @@
 // Released under the terms of the GNU General Public License version 2 or later.
 // Derived from ColumnFixture.java by Martin Chernenkoff, CHI Software Design
 // Ported to Delphi by Salim Nair.
+{$H+}
 unit ColumnFixture;
 
 interface

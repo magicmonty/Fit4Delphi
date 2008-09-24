@@ -37,7 +37,7 @@ type
     function GetDate: Variant;
     function GetGenre: Variant;
     function GetSize: Variant;
-    function GetYear: Variant;
+    function GetYear: Integer;
   public
     seconds: Integer;
     FTitle: string;
@@ -57,7 +57,7 @@ type
     property title : Variant read GetTitle;
 //    property track : TStringFunc read GetFTrack;
     function track : Variant;
-    property year : Variant read GetYear;
+    property year : Integer read GetYear;
     property size : Variant read GetSize;
     function time : Variant;
 //    property time : Double read GetTime;
@@ -121,7 +121,7 @@ begin
   result := format('%d of %d', [trackNumber, trackCount]);
 end;
 
-function TMusic.GetYear: Variant;
+function TMusic.GetYear: Integer;
 begin
   Result := FYear;
 end;
