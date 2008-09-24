@@ -70,7 +70,9 @@ uses
   TypeAdapter in '..\fit\source\TypeAdapter.pas',
   FixtureLoaderTest in 'FixtureLoaderTest.pas',
   FriendlyErrorTest in 'FriendlyErrorTest.pas',
-  ColumnFixtureTestFixture in '..\fitnesse\fixtures\ColumnFixtureTestFixture.pas';
+  ColumnFixtureTestFixture in '..\fitnesse\fixtures\ColumnFixtureTestFixture.pas',
+  TableFixture in '..\fitnesse\fixtures\TableFixture.pas',
+  RowEntryFixture in '..\fitnesse\fixtures\RowEntryFixture.pas';
 
 {$R *.RES}
 
