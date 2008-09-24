@@ -15,7 +15,8 @@
       <Projects Name="eg_music.bpl">eg\music\eg_music.bdsproj</Projects>
       <Projects Name="fitServer.exe">fitServer\fitServer.bdsproj</Projects>
       <Projects Name="FitDTests.exe">dunit\FitDTests.bdsproj</Projects>
-      <Projects Name="Targets">fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl fitServer.exe FitDTests.exe</Projects>
+      <Projects Name="fitrunner.exe">fitrunner\fitrunner.bdsproj</Projects>
+      <Projects Name="Targets">fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl fitServer.exe FitDTests.exe fitrunner.exe</Projects>
     </Projects>
     <Dependencies/>
   </Default.Personality>

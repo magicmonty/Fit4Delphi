@@ -74,7 +74,6 @@ begin
     FColumnBindings.add(nil);
 end;
 
-// TODO
 
 procedure TColumnFixture.bind(heads : TParse);
 (*
@@ -110,39 +109,6 @@ begin
     on throwable : Exception do
       doException(heads, throwable);
   end;
-  (*
-  var i : integer;
-      theName : string;
-      suffix : string;
-      tmpName : string;
-  begin
-    setupColumnBindings( heads.size );
-    i := 0;
-    while assigned( heads ) do
-    begin
-      theName := heads.text;
-      suffix := '()';
-      try
-        if ( theName = emptyStr ) then
-          columnBindings[i] := nil
-        else if ( pos( suffix, theName ) > 0 ) then
-        begin
-            tmpName := Copy( theName, 1, pos( suffix, theName ) - 1 );
-            columnBindings[ i ] := bindMethod(Copy( theName, 1,
-                  pos( suffix, theName ) - 1 ) )
-        end
-        else
-            columnBindings[ i ] := bindField( theName );
-      except
-        on e: Exception do
-          doException( heads, e );
-      end;
-
-      heads := heads.more;
-      inc( i );
-    end;
-  end;
-  *)
 end;
 
 function TColumnFixture.createBinding(column : Integer; heads : TParse) : TBinding;
@@ -156,7 +122,6 @@ end;
   }
 *)
 
-// TODO
 
 procedure TColumnFixture.doCell(cell : TParse; column : integer);
 (*
@@ -172,27 +137,6 @@ procedure TColumnFixture.doCell(cell : TParse; column : integer);
     }
   }
 *)
-(*
-var a : TTypeAdapter;
-  text : string;
-begin
-  a := ColumnBindings[ column ];
-
-  text := cell.text;
-  try
-    if ( text = '' ) then
-      checkCell(cell, a)
-    else if ( a = nil ) then
-      ignore(cell)
-    else if (a.field <> nil ) then
-      a.doSet(a.parse(text))
-    else if (a.method <> nil ) then
-      checkCell(cell, a);
-  except
-    on e: Exception do
-      doException(cell, e);
-  end;
-*)
 begin
   try
     columnBindings[column].doCell(self, cell);
@@ -202,7 +146,6 @@ begin
   end;
 end;
 
-{@}
 
 procedure TColumnFixture.doRows(Rows : TParse);
 begin
@@ -216,7 +159,6 @@ begin
   inherited doRows(rows.more);
 end;
 
-{@}
 
 procedure TColumnFixture.doRow(row : TParse);
 begin
@@ -251,21 +193,18 @@ begin
   end;
 end;
 
-{@}
 
 procedure TColumnFixture.reset();
 begin
   // about to process first cell of row
 end;
 
-{@}
 
 procedure TColumnFixture.execute();
 begin
   // about to process first method call of row
 end;
 
-{@}
 
 procedure TColumnFixture.checkCell(cell : TParse; a : TObject {TTypeAdapter});
 begin
@@ -292,7 +231,6 @@ begin
   inherited checkCell(cell, a);
 end;
 
-{@}
 
 procedure TColumnFixture.executeIfNeeded();
 begin

@@ -90,7 +90,8 @@ begin
       doException(e);
   end;
 
-  tables.print(output);
+  if Assigned(tables) then
+    tables.print(output);
 end;
 
 destructor TFileRunner.Destroy;
@@ -103,15 +104,15 @@ end;
 
 procedure TFileRunner.doArgs(args : TStringList);
 begin
-  if (args.Count <> 2) then
+  if (args.Count <> 3) then
     raise Exception.Create('Usage: TFileRunner.main input-file output-file');
 
-  FInputFile := args[0];
-  FOutputFile := args[1];
-  Input.loadFromFile(args[0]);
-  fixture.Summary.Add('input file=' + ExpandFileName(args[0]));
+  FInputFile := args[1];
+  FOutputFile := args[2];
+  Input.loadFromFile(args[1]);
+  fixture.Summary.Add('input file=' + ExpandFileName(args[1]));
   fixture.Summary.Add('input update=' + dateToStr(now));
-  fixture.Summary.Add('output file=' + ExpandFileName(args[1]));
+  fixture.Summary.Add('output file=' + ExpandFileName(args[2]));
 
   try
     input.LoadFromFile(FInputFile);
@@ -136,10 +137,11 @@ end;
 procedure TFileRunner.exit();
 begin
   output.SaveToFile(FOutputFile);
-{$IF DEF CONSOLE}
-  Writeln(fixture.counts.toString);
-  Halt(fixture.counts.wrong + fixture.counts.exceptions);
-{$IFEND}
+  if System.IsConsole then
+  begin
+    Writeln(fixture.counts.toString);
+    Halt(fixture.counts.wrong + fixture.counts.exceptions);
+  end;
 end;
 
 end.

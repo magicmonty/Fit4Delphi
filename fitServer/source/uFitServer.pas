@@ -73,7 +73,9 @@ type
 
 implementation
 
-uses idGlobal,
+uses
+  FitParseException,
+  idGlobal,
   IdTCPConnection;
 
 const
@@ -228,7 +230,7 @@ begin
         print(#9'results: ' + thefixture.counts.toString());
         theCounts.tally(theFixture.Counts);
       except
-        on E : Exception do // TODO FitParseException
+        on E : TFitParseException do
           raiseException(e);
       end;
     end;

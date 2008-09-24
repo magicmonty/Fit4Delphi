@@ -64,7 +64,7 @@ type
     function text : string;
     procedure Print(theOut : TStringList);
     class function findMatchingEndTag(lc : string; matchFromHere : Integer;
-      tag : string; offset : Integer) : Integer; static;
+      tag : string; offset : Integer) : Integer; {static;}
 
     property body : string read Fbody write Fbody;
     property leader : string read Fleader write Fleader;

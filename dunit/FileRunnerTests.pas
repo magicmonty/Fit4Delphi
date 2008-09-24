@@ -74,6 +74,7 @@ begin
   args := TStringList.Create;
   fileCOntent := TStringList.Create;
   fileContent.LoadFromFile('runnerResults.txt');
+  args.Add('fitrunner.exe');
   args.Add('runnertest.htm');
   args.Add('runnerResults.htm');
   theRunner.run(args);

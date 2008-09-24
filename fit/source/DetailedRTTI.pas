@@ -15,7 +15,7 @@ const
 
 type
 
-  TParamInfoHelper = record helper for TParamInfo
+{  TParamInfoHelper = record helper for TParamInfo
   public
    function AsString: string;
    function NextParam: PParamInfo;
@@ -31,7 +31,7 @@ type
     function GetReturnInfo: PReturnInfo;
   public
     property ReturnInfo: PReturnInfo read GetReturnInfo;
-  end;
+  end;}
 
 {  TObjectHelper = class helper for TObject
   private
@@ -40,8 +40,17 @@ type
     function GetMethodReturnInfo(MethodName: string): PReturnInfo;
   end;
 }
+  TDummy = class(TObject)
+  end;
+  
   function DescriptionOfMethod( Obj: TObject; MethodName: string ): string;
   function GetMethodReturnInfo(Obj: TObject; MethodName: string): PReturnInfo;
+
+  //Lazar
+  function NextParam( Obj:PParamInfo ):PParamInfo;
+  function ParamInfoAsString( Obj:PParamInfo ):string;
+  function GetReturnInfo(Obj:PMethodInfoHeader):PReturnInfo;
+  function ReturnInfoAsString(Obj:PReturnInfo):string;
 
 implementation
 
@@ -71,54 +80,54 @@ begin
   Result := '';
   while Integer(Param) < Integer(headerEnd) do
   begin
-    Result := Result + Param.AsString + '; ';
+    Result := Result + ParamInfoAsString(Param) + '; ';
     // Find next param
-    Param := Param.NextParam;
+    Param := NextParam(Param);
   end;
   Delete( Result, Length(Result)-1,2 );
 
   // Now the return
-  returnInfo := header.ReturnInfo;
+  returnInfo := GetReturnInfo( header );
   if assigned( returnInfo.ReturnType ) then
-    Result := Format( 'function %s( %s ): %s', [ MethodName, Result, returnInfo.AsString ] )
+    Result := Format( 'function %s( %s ): %s', [ MethodName, Result, ReturnInfoAsString(returnInfo) ] )
   else
-    Result := Format( 'procedure %s( %s )%s', [ MethodName, Result, returnInfo.AsString ] );
+    Result := Format( 'procedure %s( %s )%s', [ MethodName, Result, ReturnInfoAsString(returnInfo) ] );
 end;
 
 { TParamInfoHelper }
 
-function TParamInfoHelper.AsString: string;
+function ParamInfoAsString(Obj:PParamInfo): string;
 begin
   Result := '';
-  if pfResult in Flags then exit;         // Seems to be extra info about the return function, not sure what it means
-  Result := Name + ': ' + ParamType^.Name;
-  if pfVar in self.Flags then             // Should really handle the other flags here
+  if pfResult in Obj.Flags then exit;         // Seems to be extra info about the return function, not sure what it means
+  Result := Obj.Name + ': ' + Obj.ParamType^.Name;
+  if pfVar in Obj.Flags then             // Should really handle the other flags here
     Result := 'var ' + Result;
 end;
 
-function TParamInfoHelper.NextParam: PParamInfo;
+function NextParam(Obj:PParamInfo): PParamInfo;
 begin
-  Result := PParamInfo(Integer(@self) + SizeOf(self) - SHORT_LEN + Length(Name));
+  Result := PParamInfo(Integer(Obj) + SizeOf(Obj) - SHORT_LEN + Length(Obj.Name));
 end;
 
 { TMethodInfoHeaderHelper }
 
-function TMethodInfoHeaderHelper.GetReturnInfo: PReturnInfo;
+function GetReturnInfo(Obj:PMethodInfoHeader): PReturnInfo;
 begin
-  Result := PReturnInfo(Integer(@self) + SizeOf(TMethodInfoHeader) - SHORT_LEN + Length(Name));
+  Result := PReturnInfo(Integer(Obj) + SizeOf(TMethodInfoHeader) - SHORT_LEN + Length(Obj.Name));
 end;
 
 { TReturnInfoHelper }
 
-function TReturnInfoHelper.AsString: string;
+function ReturnInfoAsString(Obj:PReturnInfo):string;
 var
   c: string;
 begin
-  Assert( Version = 1, 'Version of ReturnInfo incorrect' );
-  if assigned( ReturnType ) then
-    Result := ReturnType^.Name;
+  Assert( Obj.Version = 1, 'Version of ReturnInfo incorrect' );
+  if assigned( Obj.ReturnType ) then
+    Result := Obj.ReturnType^.Name;
   Result := Result + ';';
-  case CallingConvention of
+  case Obj.CallingConvention of
     ccRegister: ;// Default
     ccCdecl: c := 'cdecl';
     ccPascal: c := 'pascal';
@@ -168,7 +177,7 @@ begin
     raise Exception.Create('No rich RTTI');
     exit;
   end;
-  Result := header.ReturnInfo;
+  Result := GetReturnInfo(header);
 end;
 
 end.
