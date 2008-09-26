@@ -35,6 +35,7 @@ type
     FInputFile, FOutputFile : TFileName;
     procedure doArgs(args : TStringList);
     procedure exit;
+    procedure parseAssemblyList(const theList: string);
   protected
     procedure process; virtual;
     procedure doException(e : Exception);
@@ -104,16 +105,24 @@ begin
 end;
 
 procedure TFileRunner.doArgs(args : TStringList);
+var
+  BplList : String;
 begin
-  if (args.Count <> 3) then
-    raise Exception.Create('Usage: TFileRunner.main input-file output-file');
+  if not (args.Count in [3, 4]) then
+    raise Exception.Create('Usage: FileRunner input-file output-file [BPLs]');
 
+  if args.Count = 4 then
+    BplList := args[3]
+  else
+    BplList := '';
+  
   FInputFile := args[1];
   FOutputFile := args[2];
-  Input.loadFromFile(args[1]);
-  fixture.Summary.Add('input file=' + ExpandFileName(args[1]));
+  Input.loadFromFile(FInputFile);
+  fixture.Summary.Add('input file=' + ExpandFileName(FInputFile));
   fixture.Summary.Add('input update=' + dateToStr(now));
-  fixture.Summary.Add('output file=' + ExpandFileName(args[2]));
+  fixture.Summary.Add('output file=' + ExpandFileName(FOutputFile));
+  fixture.Summary.Add('BPL list=' + ExpandFileName(BplList));
 
   try
     input.LoadFromFile(FInputFile);
@@ -125,6 +134,7 @@ begin
       Halt(1); // TODO -1
     end;
   end;
+  parseAssemblyList(BplList);
 end;
 
 procedure TFileRunner.doException(e : Exception);
@@ -143,6 +153,23 @@ begin
     Writeln(fixture.counts.toString);
     Halt(fixture.counts.wrong + fixture.counts.exceptions);
   end;
+end;
+
+// TODO Copy from FitServer
+procedure TFileRunner.parseAssemblyList(const theList : string);
+var
+  tmpList : TStringList;
+  i : integer;
+begin
+  tmpList := TStringList.Create;
+  tmpList.Delimiter := ';';
+  tmpList.DelimitedText := theList;
+
+  if (tmpList.Count = 0) then
+    fixture.addBPL(theList)
+  else
+    for i := 0 to tmpList.count - 1 do
+      fixture.addBPL(tmpList[i]);
 end;
 
 end.
