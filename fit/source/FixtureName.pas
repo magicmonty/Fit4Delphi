@@ -97,6 +97,12 @@ begin
 
   candidateClassNames.add(qualifiedBy + StringReplace(nameAsString, '.', '.T', [rfReplaceAll]));
   candidateClassNames.add(qualifiedBy + StringReplace(nameAsString, '.', '.T', [rfReplaceAll]) + 'Fixture');
+
+  if not ((nameAsString[1] = 'T') and (nameAsString[2] in ['A'..'Z'])) then // Delphi specific - convert to notation TSomeClass
+  begin
+    candidateClassNames.add(qualifiedBy + 'T' + nameAsString);
+    candidateClassNames.add(qualifiedBy + 'T' + nameAsString + 'Fixture');
+  end;
 end;
 
 end.

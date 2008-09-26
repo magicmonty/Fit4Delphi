@@ -4,7 +4,7 @@
 *Browsing Music*
 
 The music browser starts up looking at the whole library of songs. We specify the library (an advanced feature) so that we know what we are talking about in this document.
-!| TActionFixture |
+!| Action |
 | start | TBrowser | |
 | enter | load library | c:\Source\fit4delphi\eg\music\Music.txt |
 | check | total songs | 37 |
@@ -111,7 +111,7 @@ Yielding the display:
 
 _Domain objects typically have lots more fields and methods than we can conveniently look at in a single table. We compose a table specific to our needs by choosing column headings of interest. Here is another look at the results of the previous search._
 
-!| TDisplay |
+!| Display |
 | title | album | genre | size | date |
 | Another Grey Morning | JT | Pop | 3284199 | 9/7/02 11:32 PM |
 | Ananas | Hourglass | Pop | 6897450 | 9/7/02 11:47 PM |
@@ -129,4 +129,4 @@ _This completes the_ MusicExample_._
 ----
 We've run quite a few test. We'll call up one more Fixture that will add a summary to the end of our document.
 
-| TSummaryFixture |
+| Summary |
