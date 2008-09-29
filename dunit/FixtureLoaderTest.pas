@@ -85,8 +85,8 @@ begin
   CheckEquals({'fit.'}'TheThirdFixture',fixture.ClassName); //TODO
 end;
 
-procedure TFixtureLoaderTest.testLoadFixturesWithFullPackageName();
-var
+procedure TFixtureLoaderTest.testLoadFixturesWithFullPackageName();
+var
   f2 : TFixture;
 begin
   fixtureLoader.disgraceThenLoad('fitnesse.fixtures.ColumnFixtureTestFixture');
@@ -94,7 +94,7 @@ begin
   CheckEquals({'fit.'}'TColumnFixtureTestFixture',f2.ClassName); //TODO
 end;
 
-initialization
+initialization
   TestFramework.RegisterTest(TFixtureLoaderTest.Suite);
 
 end.

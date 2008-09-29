@@ -46,7 +46,7 @@ begin
 		CheckFalse(TCounts.Create(1, 0, 0, 0).equals(TCounts.Create(0, 0, 0, 0)));
 end;
 
-initialization
-  TestFramework.RegisterTest(TCountsTest.Suite);
+initialization
+  TestFramework.RegisterTest(TCountsTest.Suite);
 
 end.
