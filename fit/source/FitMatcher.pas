@@ -37,7 +37,7 @@ implementation
 
 uses
   Variants,
-  RegExpr,
+  Matcher,
   FitMatcherException;
 
 { TFitMatcher }

@@ -1,15 +1,15 @@
-!path c:\Source\fit4delphi\bin\*.bpl
-!define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v %p}
+!path bin\*.bpl
+!define COMMAND_PATTERN {bin\FitServer.exe -v %p}
 
 *Browsing Music*
 
 The music browser starts up looking at the whole library of songs. We specify the library (an advanced feature) so that we know what we are talking about in this document.
 !| Action |
 | start | TBrowser | |
-| enter | load library | c:\Source\fit4delphi\eg\music\Music.txt |
+| enter | load library | eg\music\Music.txt |
 | check | total songs | 37 |
-_This is a the file that library reads. It is tab separated text. Try downloading it and looking at it with a spreadsheet._ http:Release/Source/eg/music/Music.txt
-\\
+_ This is a the file that library reads. It is tab separated text. Try downloading it and looking at it with a spreadsheet. _ http:Release/Source/eg/music/Music.txt
+
 
 We can pick songs and see details of our selection as we go.
 

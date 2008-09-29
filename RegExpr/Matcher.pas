@@ -1,4 +1,4 @@
-unit RegExpr;
+unit Matcher;
 
 {
      TRegExpr class library

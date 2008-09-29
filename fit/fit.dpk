@@ -40,7 +40,6 @@ contains
   IdResourceStrings,
   IdSysWin32,
   IdGlobal,
-  RegExpr,
   ColumnFixture in 'source\ColumnFixture.pas',
   FileRunner in 'source\FileRunner.pas',
   Fixture in 'source\Fixture.pas',
@@ -80,7 +79,9 @@ contains
   FixtureSupplier in 'source\FixtureSupplier.pas',
   PrimitiveFixture in 'source\PrimitiveFixture.pas',
   ImportFixture in 'source\ImportFixture.pas',
-  WikiRunner in 'source\WikiRunner.pas';
+  WikiRunner in 'source\WikiRunner.pas',
+  Matcher in '..\RegExpr\Matcher.pas';
+
 {
   CopyAndAppendLastRow in 'source\decorator\CopyAndAppendLastRow.pas',
   FixtureClass in 'source\decorator\FixtureClass.pas',

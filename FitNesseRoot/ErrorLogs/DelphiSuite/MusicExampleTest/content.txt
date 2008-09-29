@@ -1,12 +1,12 @@
-|'''Date: '''|!-4:37:32 PM (CEST) on Wednesday, September 24, 2008-!|
-|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\addFixture1.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\exampleFixture1.bpl;c:\Source\fit4delphi\bin\fit.bpl localhost 8888 10-!|
+|'''Date: '''|!-9:47:23 AM (CEST) on Monday, September 29, 2008-!|
+|'''Command: '''|!-bin\FitServer.exe -v c:\Source\FCS-CustomComponents\fit4delphi\bin\addFixture1.bpl;c:\Source\FCS-CustomComponents\fit4delphi\bin\eg_music.bpl;c:\Source\FCS-CustomComponents\fit4delphi\bin\exampleFixture1.bpl;c:\Source\FCS-CustomComponents\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\*.bpl localhost 8888 5-!|
 |'''Exit code: '''|!-6-!|
-|'''Time elapsed: '''|!-0.219 seconds-!|
+|'''Time elapsed: '''|!-0.141 seconds-!|
 ----'''Standard Output:'''
 {{{http request sent
 Validating connection...
 	...ok
-processing document of size: 10434
+processing document of size: 10354
 	results: 87 right, 6 wrong, 0 ignored, 0 exceptions
 processing document of size: 0
 completion signal recieved

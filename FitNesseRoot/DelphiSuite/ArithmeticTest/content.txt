@@ -1,5 +1,5 @@
-!path c:\Source\fit4delphi\bin\*.bpl
-!define COMMAND_PATTERN {c:\Source\fit4delphi\bin\FitServer.exe -v %p}
+!path bin\*.bpl
+!define COMMAND_PATTERN {bin\FitServer.exe -v %p}
 
 h1. Integer Arithmetic
 
@@ -27,7 +27,7 @@ Now we try something similar using automatic type conversion offered by ColumnFi
 | 200 | 3 | 5 | 6 | 0 | 0.6666667 |
 | 2 | -3 | -1 | -6 | -0 | -0.6666667 |
 
-!|TAdd Fixture|
+!|Add|
 |firstValue|secondValue|resultant()|
 |1|2|3|
 |2|2|5|

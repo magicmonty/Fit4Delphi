@@ -120,10 +120,10 @@
 		</Linker>
 		<Directories>
 			<Directories Name="OutputDir"></Directories>
-			<Directories Name="UnitOutputDir">$(DelphiFit)\dcu</Directories>
-			<Directories Name="PackageDLLOutputDir">$(DelphiFit)\bin</Directories>
-			<Directories Name="PackageDCPOutputDir">$(DelphiFit)\bin</Directories>
-			<Directories Name="SearchPath">$(DelphiFit)\RegExpr</Directories>
+			<Directories Name="UnitOutputDir">..\dcu</Directories>
+			<Directories Name="PackageDLLOutputDir">..\bin</Directories>
+			<Directories Name="PackageDCPOutputDir">..\bin</Directories>
+			<Directories Name="SearchPath">$(DELPHI)\Lib\Debug;</Directories>
 			<Directories Name="Packages">vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;dsnapcon;vcldb;soaprtl;VclSmp;dbexpress;dbxcds;inetdb;bdertl;vcldbx;webdsnap;websnap;adortl;ibxpress;teeui;teedb;tee;dss;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP;primcom</Directories>
 			<Directories Name="Conditionals"></Directories>
 			<Directories Name="DebugSourceDirs"></Directories>

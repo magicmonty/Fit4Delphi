@@ -35,7 +35,7 @@ type
 implementation
 
 uses
-  RegExpr;
+  Matcher;
 
 { TRegexTest }
 

@@ -54,7 +54,7 @@ implementation
 uses
   SysUtils,
   StrUtils,
-  RegExpr;
+  Matcher;
 
 var
   finalName : string;

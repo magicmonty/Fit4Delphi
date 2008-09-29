@@ -119,11 +119,11 @@
 			<Linker Name="ExeDescription"></Linker>
 		</Linker>
 		<Directories>
-			<Directories Name="OutputDir">$(DelphiFit)\Bin</Directories>
+			<Directories Name="OutputDir">..\Bin</Directories>
 			<Directories Name="UnitOutputDir">.\dcu</Directories>
 			<Directories Name="PackageDLLOutputDir"></Directories>
-			<Directories Name="PackageDCPOutputDir">$(DelphiFit)\bin</Directories>
-			<Directories Name="SearchPath">$(DelphiFit)\bin</Directories>
+			<Directories Name="PackageDCPOutputDir">..\bin</Directories>
+			<Directories Name="SearchPath">..\bin</Directories>
 			<Directories Name="Packages">fit</Directories>
 			<Directories Name="Conditionals"></Directories>
 			<Directories Name="DebugSourceDirs"></Directories>

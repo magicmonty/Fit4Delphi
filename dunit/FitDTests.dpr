@@ -73,7 +73,8 @@ uses
   ColumnFixtureTestFixture in '..\fitnesse\fixtures\ColumnFixtureTestFixture.pas',
   TableFixture in '..\fitnesse\fixtures\TableFixture.pas',
   RowEntryFixture in '..\fitnesse\fixtures\RowEntryFixture.pas',
-  ActionFixtureTest in 'ActionFixtureTest.pas';
+  ActionFixtureTest in 'ActionFixtureTest.pas',
+  Matcher in '..\RegExpr\Matcher.pas';
 
 {$R *.RES}
 
