@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -31,7 +31,7 @@ uses Classes,
 type
   TSummaryFixture = class(TFixture)
   protected
-    function rows(counts : TCounts; count : integer) : TParse;
+    function rows(count : integer) : TParse;
     function tr(parts, more : TParse) : TParse;
     function td(body : string; more : TParse) : TParse;
     procedure mark(row : TParse);
@@ -55,12 +55,13 @@ begin
           table.parts.more = rows(keys.iterator());
       }
   *)
-  table.parts.more := rows(counts, 0);
+//TODO  summary.AddObject(countsKey, counts);
+  summary.Values[countsKey] := counts.toString;
+  summary.Sort;
+  table.parts.more := rows(0);
 end;
 
-function TSummaryFixture.rows(counts : TCounts; count : integer) : TParse;
-var
-  tdName, tdValue : TParse;
+function TSummaryFixture.rows(count : integer) : TParse;
 begin
   (*
       protected Parse rows(Iterator keys) {
@@ -81,12 +82,17 @@ begin
           }
       }
   *)
-  tdValue := td(IntToStr(counts.Items[count].Value), nil);
-  tdName := td(counts.Items[count].Name, tdValue);
-  if count < counts.Count - 1 then
-    result := tr(tdName, rows(counts, count + 1))
+  if count < summary.Count then
+  begin
+    result := tr(
+      td(summary.Names[count],
+      td(summary.Values[summary.Names[count]], nil)),
+      rows(count + 1));
+    if (summary.Names[count] = countsKey) then
+      mark(result);
+  end
   else
-    result := tr(tdName, nil);
+    result := nil;
 end;
 
 function TSummaryFixture.tr(parts, more : TParse) : TParse;

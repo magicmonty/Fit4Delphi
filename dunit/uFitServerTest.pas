@@ -34,6 +34,7 @@ type
     procedure testSimpleConnect;
   published
     procedure testArgs;
+    procedure testParseAssemblyList;
   end;
 
   TFitServerInvoker = class( TThread )
@@ -53,6 +54,11 @@ type
   end;
 
 implementation
+
+type
+  TMockFitServer = class(TFitServer)
+
+  end;
 
 procedure TFitServerTest.testArgs;
 var theServer : TFitServer;
@@ -74,6 +80,16 @@ begin
   checkEquals( 89, theServer.thePort );
   checkEquals( 1234, theServer.theSocketToken );
 
+end;
+
+procedure TFitServerTest.testParseAssemblyList;
+var
+  theList : String;
+  tmpList: TStringList;
+begin
+  theList := 'c:\test\name and space\one;c:\other\nospace\two.bpl';
+  tmpList := TMockFitServer.parseAssemblyList(theList);
+  CheckEquals(2, tmpList.Count);
 end;
 
 procedure TFitServerTest.testSimpleConnect;

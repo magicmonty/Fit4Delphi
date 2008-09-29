@@ -31,7 +31,7 @@ uses
   Classes,
   SysUtils,
   TypInfo,
-  FixtureListener;
+  FixtureListener, IniFiles;
 
 type
   TFixture = class(TPersistent)
@@ -60,7 +60,7 @@ type
     function doLabel(s : string) : string;
   public
     Counts : TCounts;
-    Summary : TStringList;
+    Summary : THashedStringList;
     constructor Create; virtual;
     destructor Destroy; override;
     procedure doTables(tables : TParse);
@@ -92,7 +92,6 @@ uses
   NullFixtureListener,
   TypeAdapter,
   Variants,
-  IniFiles,
   FixtureLoader,
   CellComparator,
   FitFailureException,
@@ -111,7 +110,7 @@ begin
   listener := TNullFixtureListener.Create;
   FBPLList := TStringList.Create;
   args := TStringList.Create;
-  summary := TStringList.Create;
+  summary := THashedStringList.Create;
 end;
 
 // TODO
@@ -379,8 +378,10 @@ begin
     }
   *)
   // TODO Summary support
-//  summary.AddObject('run date', TDate());
+//  summary.AddObject('run date', FormatDateTime('ddd mmm dd hh:nn:ss yyyy', Now)); // TODO Missing timezone
 //  summary.AddObject('run elapsed time', TRunTime.Create());
+  summary.Values['run date'] := FormatDateTime('ddd mmm dd hh:nn:ss yyyy', Now); // TODO Missing timezone
+//  summary.Values['run elapsed time'] := TRunTime.Create());
   if tables <> nil then
   begin
     heading := tables.at(0, 0, 0);
@@ -653,6 +654,8 @@ begin
     else
       tmpStr := bpl;
     try
+      if IsConsole then
+        WriteLn(tmpStr);
       FBPLList.AddObject(bpl, pointer(LoadPackage(tmpStr)));
     except
       ;

@@ -74,7 +74,8 @@ uses
   TableFixture in '..\fitnesse\fixtures\TableFixture.pas',
   RowEntryFixture in '..\fitnesse\fixtures\RowEntryFixture.pas',
   ActionFixtureTest in 'ActionFixtureTest.pas',
-  Matcher in '..\RegExpr\Matcher.pas';
+  Matcher in '..\RegExpr\Matcher.pas',
+  SummaryFixtureTest in 'SummaryFixtureTest.pas';
 
 {$R *.RES}
 

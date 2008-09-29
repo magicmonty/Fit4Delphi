@@ -12,23 +12,22 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-unit ActionFixtureTest;
+unit SummaryFixtureTest;
 
 interface
 
 uses
   Variants,
-  ActionFixture,
+  SummaryFixture,
   TestFrameWork,
   Classes,
   Contnrs,
   Binding;
 
 type
-  TActionFixtureTests = class(TTestCase)
+  TSummaryFixtureTests = class(TTestCase)
   private
   published
-    procedure testDoTableWrongFixture;
     procedure testDoTable;
   end;
 
@@ -44,27 +43,7 @@ uses
   TypeAdapter,
   ColumnFixture;
 
-procedure TActionFixtureTests.testDoTableWrongFixture;
-var
-  theParse : TParse;
-  theFixture : TFixture;
-begin
-  theParse := TParse.create(
-    '<table><tbody>' +
-    '<tr><td colspan="3">TActionFixture</td></tr>' +
-    '<tr><td>start</td><td>TNotABrowser</td><td>&nbsp;</td></tr>' +
-    '<tr><td>enter</td><td>load library</td><td>c:\Source\fit4delphi\eg\music\Music.txt</td></tr>' +
-    '<tr><td>check</td><td>total songs</td><td>37</td></tr>' +
-    '</tbody></table>');
-  theFixture := TFixture.Create;
-  theFixture.doTables(theParse);
-
-  checkEquals(0, theFixture.Counts.right, 'wrong tally for rights');
-  checkEquals(0, theFixture.Counts.wrong, 'wrong tally for wrongs');
-  checkEquals(3, theFixture.Counts.exceptions, 'wrong tally for exceptions');
-end;
-
-procedure TActionFixtureTests.testDoTable;
+procedure TSummaryFixtureTests.testDoTable;
 var
   theParse : TParse;
   theFixture : TFixture;
@@ -72,6 +51,11 @@ begin
   theParse := TParse.create(
     '<table><tbody>' +
     '<tr><td colspan=r"3">TActionFixture</td></tr>' +
+    '<tr><td>start</td><td>TBrowser</td><td>&nbsp;</td></tr>' +
+    '<tr><td>check</td><td>total songs</td><td>37</td></tr>' +
+    '</tbody></table>'+
+    '<table><tbody>' +
+    '<tr><td colspan=r"3">TSummaryFixture</td></tr>' +
     '<tr><td>start</td><td>TBrowser</td><td>&nbsp;</td></tr>' +
     '<tr><td>check</td><td>total songs</td><td>37</td></tr>' +
     '</tbody></table>');
@@ -87,7 +71,7 @@ end;
 
 initialization
 
-  TestFramework.RegisterTest(TActionFixtureTests.Suite);
+  TestFramework.RegisterTest(TSummaryFixtureTests.Suite);
 
 end.
 

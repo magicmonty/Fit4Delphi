@@ -40,6 +40,7 @@ type
     procedure Usage;
     procedure exit;
     procedure closeConnection;
+    procedure loadAssemblyList(const list: TStringList);
   protected
     procedure raiseException(e : Exception);
     function readSize : integer; virtual;
@@ -47,7 +48,7 @@ type
     procedure establishConnection;
     procedure validateConnection;
     procedure print(const msg : string);
-    procedure parseAssemblyList(const theList : string);
+    class function parseAssemblyList(const theList : string) : TStringList;
   public
     verbose : boolean;
     theHost : string;
@@ -109,7 +110,7 @@ begin
     else
     begin
       if (argumentPosition = ASSEMBLYLIST) then
-        parseAssemblyList(arguments[i])
+        loadAssemblyList(parseAssemblyList(arguments[i]))
       else
         if (argumentPosition = HOST) then
           theHost := arguments[i]
@@ -395,20 +396,18 @@ begin
     writeLn(msg);
 end;
 
-procedure TFitServer.parseAssemblyList(const theList : string);
+class function TFitServer.parseAssemblyList(const theList : string) : TStringList;
+begin
+  Result := TStringList.Create;
+  Result.Text := StringReplace(theList, ';', #13#10, [rfReplaceAll]);
+end;
+
+procedure TFitServer.loadAssemblyList(const list : TStringList);
 var
-  tmpList : TStringList;
   i : integer;
 begin
-  tmpList := TStringList.Create;
-  tmpList.Delimiter := ';';
-  tmpList.DelimitedText := theList;
-
-  if (tmpList.Count = 0) then
-    theFixture.addBPL(theList)
-  else
-    for i := 0 to tmpList.count - 1 do
-      theFixture.addBPL(tmpList[i]);
+  for i := 0 to list.count - 1 do
+    theFixture.addBPL(list[i]);
 end;
 
 end.
