@@ -12,51 +12,48 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit StringBuffer;
 
 interface
 
-uses
-  ColumnFixture;
-
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TStringBuffer = class
+  protected
+    text : string;
+  public
+    function toString() : string;
+    function append(s : string) : TStringBuffer; overload;
+    function append(i : Integer) : TStringBuffer; overload;
+    function append(s : TStringBuffer) : TStringBuffer; overload;
   end;
-{$METHODINFO OFF}
-
 implementation
 
 uses
-  SysUtils,
-  classes;
+  sysUtils;
 
-{ TColumnFixtureTestFixture }
+{ TStringBuffer }
 
-function TColumnFixtureTestFixture.output() : integer;
+function TStringBuffer.append(s : string) : TStringBuffer;
 begin
-  result := input;
+  text := text + s;
+  Result := self;
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+function TStringBuffer.append(s : TStringBuffer) : TStringBuffer;
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  Result := append(s.toString());
 end;
 
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
+function TStringBuffer.append(i : Integer) : TStringBuffer;
+begin
+  Result := append(IntToStr(i));
+end;
 
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
+function TStringBuffer.toString : string;
+begin
+  Result := text;
+end;
 
 end.
 

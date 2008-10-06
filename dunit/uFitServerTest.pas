@@ -1,13 +1,13 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
-// This program is free software; you can redistribute it and/or modify it under 
-// the terms of the GNU General Public License as published by the Free Software Foundation; 
+// This program is free software; you can redistribute it and/or modify it under
+// the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
 //
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
-// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License along with this program; 
+// You should have received a copy of the GNU General Public License along with this program;
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
@@ -19,16 +19,15 @@ interface
 uses
   classes,
   testFramework,
-  uFitServer,
-  idTCPServer, IdContext;
+  FitServer,
+  idTCPServer,
+  IdContext;
 
 type
-  TTestFitServer = class( TFitServer )
-  protected
-  public
+  TTestFitServer = class(TFitServer)
   end;
 
-  TFitServerTest = class( TTestCase )
+  TFitServerTest = class(TTestCase)
   private
     // TODO Disabled
     procedure testSimpleConnect;
@@ -37,7 +36,7 @@ type
     procedure testParseAssemblyList;
   end;
 
-  TFitServerInvoker = class( TThread )
+  TFitServerInvoker = class(TThread)
   protected
     theServer : TTestFitServer;
     procedure Execute; override;
@@ -45,12 +44,12 @@ type
     constructor Create;
   end;
 
-  TFitnessServerListener = class( TThread )
+  TFitnessServerListener = class(TThread)
   protected
     procedure Execute; override;
   public
     procedure runListener;
-    procedure OnExecute(AContext: TIdContext);
+    procedure OnExecute(AContext : TIdContext);
   end;
 
 implementation
@@ -61,31 +60,32 @@ type
   end;
 
 procedure TFitServerTest.testArgs;
-var theServer : TFitServer;
-    argList : TStringList;
+var
+  theServer : TFitServer;
+  argList : TStringList;
 begin
   theServer := TFitServer.Create;
 
   argList := TStringList.Create;
-  argList.Add( '-v' );
-  argList.Add( 'D:\DevelopmentProjects\DelphiFit\exampleFixture1.bpl' );
-  argList.Add( 'localhost' );
-  argList.Add( '89' );
-  argList.Add( '1234' );
+  argList.Add('-v');
+  argList.Add('D:\DevelopmentProjects\DelphiFit\exampleFixture1.bpl');
+  argList.Add('localhost');
+  argList.Add('89');
+  argList.Add('1234');
 
-  theServer.args( argList );
+  theServer.args(argList);
 
-  check( theServer.Verbose, 'Verbose not set' );
-  checkEquals( 'localhost', theServer.theHost );
-  checkEquals( 89, theServer.thePort );
-  checkEquals( 1234, theServer.theSocketToken );
+  check(theServer.Verbose, 'Verbose not set');
+  checkEquals('localhost', theServer.theHost);
+  checkEquals(89, theServer.thePort);
+  checkEquals(1234, theServer.theSocketToken);
 
 end;
 
 procedure TFitServerTest.testParseAssemblyList;
 var
-  theList : String;
-  tmpList: TStringList;
+  theList : string;
+  tmpList : TStringList;
 begin
   theList := 'c:\test\name and space\one;c:\other\nospace\two.bpl';
   tmpList := TMockFitServer.parseAssemblyList(theList);
@@ -93,21 +93,22 @@ begin
 end;
 
 procedure TFitServerTest.testSimpleConnect;
-var theServerInvoker : TFitServerInvoker;
-    listner : TFitnessServerListener;
-    argList : TStringList;
+var
+  theServerInvoker : TFitServerInvoker;
+  listner : TFitnessServerListener;
+  argList : TStringList;
 begin
-  listner := TFitnessServerListener.Create( true );
+  listner := TFitnessServerListener.Create(true);
   theServerInvoker := TFitServerInvoker.Create;
   argList := TStringList.Create;
-//  argList.Add( '-v' );
-  argList.Add( 'C:\fitnesse\source\DelphiFit\bin\exampleFixture1;C:\fitnesse\source\DelphiFit\bin\addFixture1.bpl' );
-  argList.Add( 'localhost' );
-  argList.Add( '89' );
-  argList.Add( '1234' );
+  //  argList.Add( '-v' );
+  argList.Add('C:\fitnesse\source\DelphiFit\bin\exampleFixture1;C:\fitnesse\source\DelphiFit\bin\addFixture1.bpl');
+  argList.Add('localhost');
+  argList.Add('89');
+  argList.Add('1234');
   listner.runListener;
 
-  theServerInvoker.theServer.run( argList );
+  theServerInvoker.theServer.run(argList);
   theServerInvoker.Terminate;
   listner.Terminate;
 end;
@@ -115,9 +116,10 @@ end;
 { FitnessServerListener }
 
 procedure TFitnessServerListener.runListener;
-var theServer : TIdTCPServer;
+var
+  theServer : TIdTCPServer;
 begin
-  theServer := TIdTCPServer.Create( nil );
+  theServer := TIdTCPServer.Create(nil);
   theServer.DefaultPort := 89;
   theServer.OnExecute := OnExecute;
   theServer.Active := true;
@@ -132,7 +134,7 @@ begin
   end;
 end;
 
-procedure TFitnessServerListener.OnExecute(AContext:TIdContext);
+procedure TFitnessServerListener.OnExecute(AContext : TIdContext);
 begin
   while not Terminated do
   begin
@@ -144,7 +146,7 @@ end;
 
 constructor TFitServerInvoker.Create;
 begin
-  inherited Create( false );
+  inherited Create(false);
   theServer := TTestFitServer.create;
 end;
 
@@ -155,5 +157,6 @@ begin
 end;
 
 initialization
-  registerTest( TFitServerTest.Suite );
+  registerTest(TFitServerTest.Suite);
 end.
+

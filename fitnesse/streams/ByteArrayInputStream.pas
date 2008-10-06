@@ -12,51 +12,48 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit ByteArrayInputStream;
 
 interface
 
 uses
-  ColumnFixture;
+  Classes, InputStream;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TByteArrayInputStream = class(TInputStream)
+  public
+    constructor Create; overload;
+    constructor Create(str : String); overload;
+    function toByteArray : String; //TODO
+    function toString : String;
   end;
-{$METHODINFO OFF}
 
 implementation
 
-uses
-  SysUtils,
-  classes;
+{ TByteArrayInputStream }
 
-{ TColumnFixtureTestFixture }
-
-function TColumnFixtureTestFixture.output() : integer;
+constructor TByteArrayInputStream.Create;
 begin
-  result := input;
+  Create('');
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+constructor TByteArrayInputStream.Create(str: String);
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  inherited Create;
+  stream := TStringStream.Create(str);
 end;
 
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
+function TByteArrayInputStream.toByteArray: String;
+begin
+// TODO
+  Result := toString;
+end;
 
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
+function TByteArrayInputStream.toString: String;
+begin
+  Result := (stream as TStringStream).DataString;
+end;
 
 end.
 

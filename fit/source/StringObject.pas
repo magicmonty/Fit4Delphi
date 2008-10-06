@@ -12,51 +12,35 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit StringObject;
 
 interface
 
 uses
-  ColumnFixture;
+  FitObject;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
+  TStringObject = class(TFitObject)
   private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+    str : String;
+  public
+    constructor Create(s : String);
+    function toString() : string; override;
   end;
-{$METHODINFO OFF}
 
 implementation
 
-uses
-  SysUtils,
-  classes;
+{ TStringObject }
 
-{ TColumnFixtureTestFixture }
-
-function TColumnFixtureTestFixture.output() : integer;
+constructor TStringObject.Create(s: String);
 begin
-  result := input;
+  str :=s;
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+function TStringObject.toString: string;
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  Result := str;
 end;
-
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
-
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
 
 end.
-

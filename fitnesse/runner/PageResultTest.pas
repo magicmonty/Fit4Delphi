@@ -1,4 +1,5 @@
 // Fit4Delphi Copyright (C) 2008. Sabre Inc.
+
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software Foundation;
 // either version 2 of the License, or (at your option) any later version.
@@ -13,50 +14,56 @@
 // Ported to Delphi by Michal Wojcik.
 //
 // Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
+
 // Released under the terms of the GNU General Public License version 2 or later.
-{$H+}
-unit ColumnFixtureTestFixture;
+unit PageResultTest;
 
 interface
 
 uses
-  ColumnFixture;
+  TestFramework;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
+  TPageResultTest = class(TTestCase)
   published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+    procedure testToString();
+    procedure testParse();
   end;
-{$METHODINFO OFF}
 
 implementation
 
 uses
-  SysUtils,
-  classes;
+  PageResult,
+  Counts;
 
-{ TColumnFixtureTestFixture }
+{ TPageResultTest }
 
-function TColumnFixtureTestFixture.output() : integer;
+procedure TPageResultTest.testToString();
+var
+  result : TPageResult;
 begin
-  result := input;
+  result := TPageResult.Create('PageTitle', TCounts.Create(1, 2, 3, 4), 'content');
+  CheckEquals('PageTitle'#13#10'1 right, 2 wrong, 3 ignored, 4 exceptions'#13#10'content', result.toString());
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+procedure TPageResultTest.testParse();
+var
+  result : TPageResult;
+  counts : TCounts;
+  parsedResult : TPageResult;
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  counts := TCounts.Create(1, 2, 3, 4);
+  result := TPageResult.Create('PageTitle', counts, 'content');
+  parsedResult := TPageResult.parse(result.toString());
+  CheckEquals('PageTitle', parsedResult.title());
+  CheckEquals(counts.toString, parsedResult.counts().toString);
+  CheckEquals('content', parsedResult.content());
 end;
 
 initialization
-  RegisterClass(TColumnFixtureTestFixture);
 
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
+  TestFramework.RegisterTest(TPageResultTest.Suite);
 
 end.
 
+

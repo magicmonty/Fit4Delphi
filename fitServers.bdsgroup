@@ -8,16 +8,20 @@
 			<Option Name="GUID">{69546AE6-B782-4E92-8105-51E1D9BDCB2F}</Option>
 		</Option>
 	</PersonalityInfo>
-	<Default.Personality>  <Projects>
+	<Default.Personality>  
+    
+    <Projects>
       <Projects Name="fit.bpl">fit\fit.bdsproj</Projects>
       <Projects Name="exampleFixture1.bpl">eg\exampleFixture1.bdsproj</Projects>
       <Projects Name="addFixture1.bpl">eg\addFixture1.bdsproj</Projects>
       <Projects Name="eg_music.bpl">eg\music\eg_music.bdsproj</Projects>
-      <Projects Name="fitServer.exe">fitServer\fitServer.bdsproj</Projects>
+      <Projects Name="DelphiFitServer.exe">fitServer\DelphiFitServer.bdsproj</Projects>
       <Projects Name="FitDTests.exe">dunit\FitDTests.bdsproj</Projects>
-      <Projects Name="fitrunner.exe">fitrunner\fitrunner.bdsproj</Projects>
-      <Projects Name="Targets">fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl fitServer.exe FitDTests.exe fitrunner.exe</Projects>
+      <Projects Name="DelphiFitRunner.exe">fitrunner\DelphiFitRunner.bdsproj</Projects>
+      <Projects Name="DelphiTestRunner.exe">testrunner\DelphiTestRunner.bdsproj</Projects>
+      <Projects Name="Targets">fit.bpl exampleFixture1.bpl addFixture1.bpl eg_music.bpl DelphiFitServer.exe FitDTests.exe DelphiFitRunner.exe DelphiTestRunner.exe</Projects>
     </Projects>
     <Dependencies/>
-  </Default.Personality>
+  </Default.Personality>  <StarTeamAssociation></StarTeamAssociation>
+  <StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
 </BorlandProject>

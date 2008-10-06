@@ -12,51 +12,49 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit PrintStream;
 
 interface
 
 uses
-  ColumnFixture;
+  OutputStream;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TPrintStream = class(TOutputStream)
+  public
+    procedure print(s : string);
+    procedure println(s : string = '');
+    constructor Create(s : String); overload;
+    constructor Create(s : TOutputStream); overload;
   end;
-{$METHODINFO OFF}
 
 implementation
 
 uses
-  SysUtils,
-  classes;
+  Classes;
 
-{ TColumnFixtureTestFixture }
+{ TPrintStream }
 
-function TColumnFixtureTestFixture.output() : integer;
+constructor TPrintStream.Create(s : String);
 begin
-  result := input;
+  stream := TStringStream.Create(s);
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+constructor TPrintStream.Create(s: TOutputStream);
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  stream := s.stream; //TODO???
 end;
 
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
+procedure TPrintStream.print(s : string);
+begin
+  stream.Write(s[1], Length(s));
+end;
 
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
+procedure TPrintStream.println(s : string = '');
+begin
+  print(s + #13#10);
+end;
 
 end.
 

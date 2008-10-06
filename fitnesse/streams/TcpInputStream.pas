@@ -12,51 +12,28 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit TcpInputStream;
 
 interface
 
 uses
-  ColumnFixture;
+  InputStream;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TTcpInputStream = class(TInputStream)
+  public
+    function isEof() : Boolean; override;
   end;
-{$METHODINFO OFF}
 
 implementation
 
-uses
-  SysUtils,
-  classes;
+{ TTcpInputStream }
 
-{ TColumnFixtureTestFixture }
-
-function TColumnFixtureTestFixture.output() : integer;
+function TTcpInputStream.isEof : Boolean;
 begin
-  result := input;
+  Result := false;
 end;
-
-function TColumnFixtureTestFixture.exception() : boolean;
-begin
-  raise SysUtils.Exception.Create('I thowed up');
-end;
-
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
-
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
 
 end.
 

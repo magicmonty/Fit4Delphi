@@ -12,51 +12,40 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit FileInputStream;
 
 interface
 
 uses
-  ColumnFixture;
+  FileUnit,
+  classes, InputStream;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TFileInputStream = class(TInputStream)
+  public
+    procedure close(); virtual;
+    constructor Create(const AFile : TFile);
   end;
-{$METHODINFO OFF}
 
 implementation
 
 uses
-  SysUtils,
-  classes;
+  Windows,
+  sysUtils;
 
-{ TColumnFixtureTestFixture }
+{ TFileInputStream }
 
-function TColumnFixtureTestFixture.output() : integer;
+procedure TFileInputStream.close;
 begin
-  result := input;
+  FileClose((stream as TFileStream).Handle);
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+constructor TFileInputStream.Create(const AFile: TFile);
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  inherited Create;
+  stream := TFileStream.Create(AFile.FileName, fmOpenRead);
 end;
-
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
-
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
 
 end.
 

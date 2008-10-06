@@ -31,7 +31,8 @@ uses
   Classes,
   SysUtils,
   TypInfo,
-  FixtureListener, IniFiles;
+  FixtureListener,
+  IniFiles;
 
 type
   TFixture = class(TPersistent)
@@ -96,7 +97,8 @@ uses
   CellComparator,
   FitFailureException,
   StringTokenizer,
-  Runtime;
+  Runtime,
+  InvocationTargetException;
 
 var
   symbols : THashedStringList;
@@ -292,7 +294,8 @@ begin
         counts.exceptions++;
     }
   *)
-// TODO InvocationTargetException
+  while (e is TInvocationTargetException) do
+    e := (e as TInvocationTargetException).getTargetException();
   if (isFriendlyException(e)) then
     cell.addToBody('<hr/>' + doLabel(e.Message))
   else
@@ -381,7 +384,7 @@ begin
 //  summary.AddObject('run date', FormatDateTime('ddd mmm dd hh:nn:ss yyyy', Now)); // TODO Missing timezone
 //  summary.AddObject('run elapsed time', TRunTime.Create());
   summary.Values['run date'] := FormatDateTime('ddd mmm dd hh:nn:ss yyyy', Now); // TODO Missing timezone
-//  summary.Values['run elapsed time'] := TRunTime.Create());
+  //  summary.Values['run elapsed time'] := TRunTime.Create());
   if tables <> nil then
   begin
     heading := tables.at(0, 0, 0);

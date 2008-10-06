@@ -1,52 +1,22 @@
 [Closed Files]
-File_0=TSourceModule,'C:\Source\fit4delphi\fit\source\decorator\util\Delta.pas',0,1,10,1,22,0,0,,
-File_1=TSourceModule,'C:\Source\fit4delphi\fit\source\decorator\util\Table.pas',0,1,1,5,224,0,0,,
-File_2=TSourceModule,'C:\Source\fit4delphi\fit\source\decorator\FixtureDecorator.pas',0,1,42,11,60,0,0,,
-File_3=TSourceModule,'C:\Source\fit4delphi\fit\source\decorator\CopyAndAppendLastRow.pas',0,1,1,16,24,0,0,,
-File_4=TSourceModule,'c:\program files\borland\bds\4.0\source\Win32\rtl\sys\System.pas',0,1,17666,27,17684,0,0,,
-File_5=TSourceModule,'c:\program files\borland\bds\4.0\source\Win32\rtl\common\Classes.pas',0,1,591,1,609,0,0,,
-File_6=TSourceModule,'C:\Source\fit4delphi\dunit\RowFixtureTests.pas',0,1,43,1,233,0,0,,
-File_7=TSourceModule,'C:\Source\fit4delphi\fit\source\Field.pas',0,1,37,56,49,0,0,,
-File_8=TSourceModule,'C:\Source\fit4delphi\dunit\ActionFixtureTest.pas',0,1,49,23,74,0,0,,
+File_0=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\dunit\uFitServerTest.pas',0,1,34,24,34,0,0,,
+File_1=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fit\source\FitServer.pas',0,1,1,47,13,0,0,,
+File_2=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\runner\TestRunnerFixtureListener.pas',0,1,29,13,48,0,0,,
+File_3=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\runner\TestRunner.pas',0,1,1,3,23,0,0,,
+File_4=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\components\ContentBufferTest.pas',0,1,133,1,145,0,0,,
+File_5=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\util\FileUtilTest.pas',0,1,147,56,156,0,0,,
+File_6=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\http\RequestBuilderTest.pas',0,1,83,42,99,0,0,,
+File_7=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\runner\PageResult.pas',0,1,27,1,27,0,0,,
+File_8=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\runner\CachingResultFormatter.pas',0,1,74,1,99,0,0,,
+File_9=TSourceModule,'C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fit\source\ActionFixture.pas',0,1,65,1,85,0,0,,
 
 [Modules]
-Module0=C:\Source\fit4delphi\dunit\RegexTest.pas
-Module1=C:\Source\fit4delphi\fit\fit.bdsproj
-Module2=C:\Source\fit4delphi\fit\source\FitMatcher.pas
-Module3=default.htm
-Module4=C:\Source\fit4delphi\fit\source\ActionFixture.pas
-Count=5
+Count=0
 EditWindowCount=1
 
-[C:\Source\fit4delphi\dunit\RegexTest.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[C:\Source\fit4delphi\fit\fit.bdsproj]
-ModuleType=TBaseProject
-
-[C:\Source\fit4delphi\fit\source\FitMatcher.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
-[default.htm]
-ModuleType=TURLModule
-
-[C:\Source\fit4delphi\fit\source\ActionFixture.pas]
-ModuleType=TSourceModule
-FormState=0
-FormOnTop=0
-
 [EditWindow0]
-ViewCount=5
-CurrentEditView=C:\Source\fit4delphi\dunit\RegexTest.pas
-View0=0
-View1=1
-View2=2
-View3=3
-View4=4
+ViewCount=0
+CurrentView=-1
 PercentageSizes=1
 Create=1
 Visible=1
@@ -54,11 +24,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=9938
+Width=9922
 Height=9115
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=9938
+ClientWidth=9922
 ClientHeight=9115
 DockedToMainForm=1
 MessageView=MessageView@EditWindow0
@@ -72,71 +42,23 @@ RightPanelClients=ToolForm,ProjectManager
 RightPanelData=0000080001020100000008000000546F6F6C466F726D3D0800000000000002CA19000000000000010000000198060000000000000200000000CA1900001200000050726F6A6563744D616E61676572466F726DFFFFFFFF
 BottomPanelSize=1914
 BottomPanelClients=MessageView@EditWindow0,ToDo List,DockSite0
-BottomPanelData=000008000102010000000E000000546F446F4C69737457696E646F778630000000000000027A0700000000000001000000004318000009000000446F636B53697465300100000000863000000B0000004D65737361676556696577FFFFFFFF
+BottomPanelData=000008000102020000000B0000004D657373616765566965770E000000546F446F4C69737457696E646F777230000000000000027A0700000000000001000000007230000009000000446F636B5369746530FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite1
 BottomMiddelPanelData=0000080001020100000009000000446F636B53697465313F23000000000000025F06000000000000FFFFFFFF
 
-[View0]
-CustomEditViewType=TWelcomePageView
-WelcomePageURL=bds:/default.htm
-
-[View1]
-CustomEditViewType=TEditView
-Module=C:\Source\fit4delphi\fit\source\ActionFixture.pas
-CursorX=45
-CursorY=97
-TopLine=70
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Source\fit4delphi\fit\source\ActionFixture.pas
-
-[View2]
-CustomEditViewType=TEditView
-Module=C:\Source\fit4delphi\fit\fit.dpk
-CursorX=10
-CursorY=43
-TopLine=10
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Source\fit4delphi\fit\fit.dpk
-
-[View3]
-CustomEditViewType=TEditView
-Module=C:\Source\fit4delphi\dunit\RegexTest.pas
-CursorX=10
-CursorY=38
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Source\fit4delphi\dunit\RegexTest.pas
-
-[View4]
-CustomEditViewType=TEditView
-Module=C:\Source\fit4delphi\fit\source\FitMatcher.pas
-CursorX=1
-CursorY=49
-TopLine=45
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Source\fit4delphi\fit\source\FitMatcher.pas
-
 [Watches]
 Count=16
-Watch0='args.text',256,0,18,1,1,'Watches'
+Watch0='inputs[i]',256,0,18,1,1,'Watches'
 Watch1='e.message',256,0,18,1,0,'Watches'
-Watch2='heads.size',256,0,18,1,1,'Watches'
+Watch2='Length(value)',256,0,18,1,1,'Watches'
 Watch3='self.ClassType',256,0,18,1,1,'Watches'
 Watch4='cell.text',256,0,18,1,1,'Watches'
-Watch5='results.count',256,0,18,1,1,'Watches'
-Watch6='throwable.message',256,0,18,1,0,'Watches'
-Watch7='ParamCount',256,0,18,1,1,'Watches'
-Watch8='heads.size',256,0,18,1,1,'Watches'
-Watch9='each',256,0,18,1,0,'Watches'
+Watch5='targetException.message',256,0,18,1,1,'Watches'
+Watch6='TInvocationTargetException(e)',256,0,18,1,0,'Watches'
+Watch7='e.classname',256,0,18,1,1,'Watches'
+Watch8='targetException.classname',256,0,18,1,1,'Watches'
+Watch9='tmpList.text',256,0,18,1,1,'Watches'
 Watch10='page.text',256,0,18,1,1,'Watches'
 Watch11='ReturnInfo.ReturnType',256,0,18,1,0,'Watches'
 Watch12='PTypeInfo(ReturnInfo.ReturnType)',256,0,18,1,1,'Watches'
@@ -145,7 +67,7 @@ Watch14='self.ReturnType^.Kind',256,0,18,1,0,'Watches'
 Watch15='PTypeInfo(result.ReturnType)',256,0,18,1,0,'Watches'
 
 [WatchWindow]
-WatchColumnWidth=216
+WatchColumnWidth=120
 WatchShowColumnHeaders=1
 PercentageSizes=1
 Create=1
@@ -166,9 +88,11 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=2
+Count=4
 Breakpoint0='C:\Source\fit4delphi\dunit\FriendlyErrorTest.pas',64,'',0,1,'',1,0,0,'',1,'','','',0
 Breakpoint1='c:\Source\fit4delphi\fit\source\CellComparator.pas',121,'',0,1,'',1,0,0,'',1,'','','',0
+Breakpoint2='C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fit\source\SummaryFixture.pas',58,'',0,1,'',1,0,0,'',1,'','','',0
+Breakpoint3='C:\Source\FCS-CustomComponents\Custom Components\fit4delphi\fitnesse\runner\TestRunner.pas',162,'',0,1,'',1,0,0,'',1,'','','',0
 
 [AddressBreakpoints]
 Count=0
@@ -181,11 +105,11 @@ Docked=0
 State=0
 Left=0
 Top=0
-Width=10000
+Width=9984
 Height=10010
 MaxLeft=-8
 MaxTop=-10
-ClientWidth=9938
+ClientWidth=9922
 ClientHeight=9656
 BottomPanelSize=8545
 BottomPanelClients=EditWindow0
@@ -217,7 +141,7 @@ Visible=0
 Docked=1
 State=0
 Left=-848
-Top=-313
+Top=-458
 Width=1688
 Height=6646
 MaxLeft=-1
@@ -237,11 +161,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=4875
+Width=9859
 Height=1438
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4875
+ClientWidth=9859
 ClientHeight=1438
 TBDockHeight=3365
 LRDockWidth=3625
@@ -256,11 +180,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=4875
+Width=9859
 Height=1438
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4875
+ClientWidth=9859
 ClientHeight=1438
 TBDockHeight=771
 LRDockWidth=5422
@@ -354,7 +278,7 @@ Visible=0
 Docked=1
 State=0
 Left=-204
-Top=-729
+Top=-874
 Width=3672
 Height=1802
 MaxLeft=-1
@@ -441,7 +365,7 @@ Visible=0
 Docked=1
 State=0
 Left=-204
-Top=-313
+Top=-458
 Width=2602
 Height=6635
 MaxLeft=-1
@@ -462,11 +386,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=4875
+Width=9859
 Height=1438
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4875
+ClientWidth=9859
 ClientHeight=1438
 TBDockHeight=2083
 LRDockWidth=6398
@@ -715,30 +639,30 @@ Docked=0
 State=0
 Left=0
 Top=0
-Width=1508
-Height=1094
+Width=1148
+Height=1062
 MaxLeft=-8
 MaxTop=-10
-ClientWidth=1445
-ClientHeight=823
-TBDockHeight=1094
-LRDockWidth=1508
+ClientWidth=1086
+ClientHeight=792
+TBDockHeight=1062
+LRDockWidth=1148
 Dockable=1
 StayOnTop=0
 
 [MessageView@EditWindow0]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=636
 Top=23
-Width=4969
+Width=3852
 Height=1802
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4969
+ClientWidth=3852
 ClientHeight=1802
 TBDockHeight=1802
 LRDockWidth=3852
@@ -776,11 +700,11 @@ Docked=1
 State=0
 Left=0
 Top=23
-Width=4938
+Width=9922
 Height=1802
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=4938
+ClientWidth=9922
 ClientHeight=1802
 TBDockHeight=1802
 LRDockWidth=2453
@@ -814,5 +738,5 @@ ActiveTabID=RefactoringForm
 TabDockClients=RefactoringForm,FindReferencsForm
 
 [ActiveProject]
-ActiveProject=6
+ActiveProject=8
 

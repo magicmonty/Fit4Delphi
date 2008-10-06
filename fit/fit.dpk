@@ -80,7 +80,8 @@ contains
   PrimitiveFixture in 'source\PrimitiveFixture.pas',
   ImportFixture in 'source\ImportFixture.pas',
   WikiRunner in 'source\WikiRunner.pas',
-  Matcher in '..\RegExpr\Matcher.pas';
+  Matcher in '..\RegExpr\Matcher.pas',
+  InvocationTargetException in 'source\exception\InvocationTargetException.pas';
 
 {
   CopyAndAppendLastRow in 'source\decorator\CopyAndAppendLastRow.pas',

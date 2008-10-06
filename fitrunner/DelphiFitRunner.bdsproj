@@ -3,14 +3,14 @@
 	<PersonalityInfo>
 		<Option>
 			<Option Name="Personality">Delphi.Personality</Option>
-			<Option Name="ProjectType">VCLApplication</Option>
+			<Option Name="ProjectType"></Option>
 			<Option Name="Version">1.0</Option>
-			<Option Name="GUID">{52F36E3F-7E98-4F5A-BDBD-97EF96B32F15}</Option>
+			<Option Name="GUID">{E747A24E-4420-4B20-8807-7CB62A662B46}</Option>
 		</Option>
 	</PersonalityInfo>
 	<Delphi.Personality>
 		<Source>
-			<Source Name="MainSource">fitServer.dpr</Source>
+			<Source Name="MainSource">DelphiFitRunner.dpr</Source>
 		</Source>
 		<FileVersion>
 			<FileVersion Name="Version">7.0</FileVersion>
@@ -122,7 +122,7 @@
 			<Directories Name="OutputDir">..\Bin</Directories>
 			<Directories Name="UnitOutputDir">.\dcu</Directories>
 			<Directories Name="PackageDLLOutputDir"></Directories>
-			<Directories Name="PackageDCPOutputDir">..\bin</Directories>
+			<Directories Name="PackageDCPOutputDir"></Directories>
 			<Directories Name="SearchPath">..\bin</Directories>
 			<Directories Name="Packages">fit</Directories>
 			<Directories Name="Conditionals"></Directories>
@@ -130,7 +130,7 @@
 			<Directories Name="UsePackages">True</Directories>
 		</Directories>
 		<Parameters>
-			<Parameters Name="RunParams">-v defaultPath localhost 8888 156</Parameters>
+			<Parameters Name="RunParams">a.html b.html</Parameters>
 			<Parameters Name="HostApplication"></Parameters>
 			<Parameters Name="Launcher"></Parameters>
 			<Parameters Name="UseLauncher">False</Parameters>
@@ -142,7 +142,7 @@
 		<Language>
 			<Language Name="ActiveLang"></Language>
 			<Language Name="ProjectLang">$00000000</Language>
-			<Language Name="RootDir">C:\Program Files\Borland\Delphi7\Bin\</Language>
+			<Language Name="RootDir"></Language>
 		</Language>
 		<VersionInfo>
 			<VersionInfo Name="IncludeVerInfo">False</VersionInfo>

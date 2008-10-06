@@ -12,51 +12,52 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit OutputStream;
 
 interface
 
 uses
-  ColumnFixture;
+  classes;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TOutputStream = class(TObject)
+  protected
+  public
+    stream : TStream;
+    destructor Destroy; override;
+    procedure write(value : string);
+    procedure close(); virtual;
+    procedure flush();
   end;
-{$METHODINFO OFF}
 
 implementation
 
 uses
-  SysUtils,
-  classes;
+  windows;
 
-{ TColumnFixtureTestFixture }
+{ TOutputStream }
 
-function TColumnFixtureTestFixture.output() : integer;
+procedure TOutputStream.close;
 begin
-  result := input;
+
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+destructor TOutputStream.Destroy;
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  stream.Free;
+  inherited;
 end;
 
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
+procedure TOutputStream.flush;
+begin
 
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
+end;
+
+procedure TOutputStream.write(value: string);
+begin
+  stream.Write(value[1], Length(value));
+end;
 
 end.
 

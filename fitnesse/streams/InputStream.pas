@@ -12,51 +12,34 @@
 //
 // Ported to Delphi by Michal Wojcik.
 //
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit InputStream;
 
 interface
 
 uses
-  ColumnFixture;
+  classes;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
-  private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+  TInputStream = class(TObject)
+  public
+    stream : TStream;
+  public
+    function isEof() : Boolean; virtual;
+
   end;
-{$METHODINFO OFF}
 
 implementation
 
-uses
-  SysUtils,
-  classes;
+function TInputStream.isEof: Boolean;
+var
+  LPos: Int64;
+Begin
+  LPos := stream.Seek(0,soFromCurrent);
+  Result := LPos>=stream.Seek(0,soFromEnd);
+  stream.Seek(LPos,soFromBeginning);
 
-{ TColumnFixtureTestFixture }
-
-function TColumnFixtureTestFixture.output() : integer;
-begin
-  result := input;
+//  Result := stream.stream.Position >= stream.stream.Size;
 end;
-
-function TColumnFixtureTestFixture.exception() : boolean;
-begin
-  raise SysUtils.Exception.Create('I thowed up');
-end;
-
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
-
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
 
 end.
-

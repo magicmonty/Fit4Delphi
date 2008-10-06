@@ -11,52 +11,43 @@
 // if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //
 // Ported to Delphi by Michal Wojcik.
-//
-// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
-// Released under the terms of the GNU General Public License version 2 or later.
 {$H+}
-unit ColumnFixtureTestFixture;
+unit InvocationTargetException;
 
 interface
 
 uses
-  ColumnFixture;
+  SysUtils,
+  ObjAuto;
 
 type
-{$METHODINFO ON}
-  TColumnFixtureTestFixture = class(TColumnFixture)
+  TInvocationTargetException = class(Exception)
   private
-    FInput : integer;
-  published
-    property input : Integer read FInput write FInput;
-    function output() : integer;
-    function exception() : boolean;
+    targetException : Exception;
+  public
+    constructor Create(MethodInfo : PMethodInfoHeader; e : Exception);
+    function getTargetException() : Exception;
   end;
-{$METHODINFO OFF}
 
 implementation
 
-uses
-  SysUtils,
-  classes;
+{ TInvocationTargetException }
 
-{ TColumnFixtureTestFixture }
-
-function TColumnFixtureTestFixture.output() : integer;
+constructor TInvocationTargetException.Create(MethodInfo : PMethodInfoHeader; e : Exception);
 begin
-  result := input;
+  inherited CreateFmt('"%s" called with invalid arguments: %s', [MethodInfo.Name, e.Message]);
+  targetException := e.ClassType.Create as Exception;
+  targetException.Message := e.Message;
+  if (targetException is TInvocationTargetException) then
+    (targetException as TInvocationTargetException).targetException := (e as
+      TInvocationTargetException).targetException;
+
 end;
 
-function TColumnFixtureTestFixture.exception() : boolean;
+function TInvocationTargetException.getTargetException : Exception;
 begin
-  raise SysUtils.Exception.Create('I thowed up');
+  Result := targetException;
 end;
-
-initialization
-  RegisterClass(TColumnFixtureTestFixture);
-
-finalization
-  UnRegisterClass(TColumnFixtureTestFixture);
 
 end.
 
