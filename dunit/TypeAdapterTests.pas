@@ -132,7 +132,7 @@ begin
   aFixture.sampleInteger := 90;
   aField := TField.Create(aFixture.ClassType, 'sampleInteger');
   a := TTypeAdapter.adapterOn(aFixture, aField);
-  CheckEquals(90, a.get);
+  CheckEquals(90, integer(a.get));
 
   aMethod := TMethod.Create(aFixture.ClassType, 'pi');
   a := TTypeAdapter.adapterOn(aFixture, aMethod);
