@@ -1,13 +1,19 @@
-|'''Date: '''|!-4:48:00 PM (CEST) on Wednesday, September 17, 2008-!|
-|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl  localhost 8888 3-!|
-|'''Exit code: '''|!-10-!|
-|'''Time elapsed: '''|!-0.657 seconds-!|
-----'''Standard Output:'''
-{{{http request sent
-Validating connection...
-	...ok
-processing document of size: 2720
-	results: 3 right, 2 wrong, 0 ignored, 2 exceptions
-processing document of size: 10431
-	results: 87 right, 6 wrong, 0 ignored, 0 exceptions
-processing document of si}}}
+|'''Date: '''|!-3:49:12 PM (CEST) on Thursday, October 2, 2008-!|
+|'''Command: '''|!-c:\Source\fit4delphi\bin\FitServer.exe -v c:\Source\fit4delphi\bin\fit.bpl;c:\Source\fit4delphi\bin\eg_music.bpl;c:\Source\fit4delphi\bin\addFixture1.bpl  localhost 8888 1-!|
+|'''Exit code: '''|!--1-!|
+|'''Time elapsed: '''|!--1.222955352882E9 seconds-!|
+----'''Internal Exception:'''
+{{{ java.io.IOException: Cannot run program "c:\Source\fit4delphi\bin\FitServer.exe": CreateProcess error=3, The system cannot find the path specified
+	java.lang.ProcessBuilder.start(ProcessBuilder.java:459)
+	java.lang.Runtime.exec(Runtime.java:593)
+	java.lang.Runtime.exec(Runtime.java:431)
+	java.lang.Runtime.exec(Runtime.java:328)
+	fitnesse.components.CommandRunner.start(Unknown Source)
+	fitnesse.components.CommandRunningFitClient.start(Unknown Source)
+	fitnesse.responders.run.TestResponder.startFitClient(Unknown Source)
+	fitnesse.responders.run.TestResponder.doSending(Unknown Source)
+	fitnesse.responders.ChunkingResponder.startSending(Unknown Source)
+	fitnesse.responders.ChunkingResponder.access$000(Unknown Source)
+	fitnesse.responders.ChunkingResponder$RespondingRunnable.run(Unknown Source)
+	java.lang.Thread.run(Thread.java:619)
+}}}

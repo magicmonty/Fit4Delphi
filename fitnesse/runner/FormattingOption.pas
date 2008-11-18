@@ -150,6 +150,7 @@ begin
   end;
   if (not usingStdout) then
     output.close();
+  inputStream.Free;
 end;
 
 function TFormattingOption.wasSuccessful() : Boolean;

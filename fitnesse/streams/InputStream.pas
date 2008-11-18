@@ -26,10 +26,16 @@ type
     stream : TStream;
   public
     function isEof() : Boolean; virtual;
-
+    destructor Destroy; override;
   end;
 
 implementation
+
+destructor TInputStream.Destroy;
+begin
+  stream.Free;
+  inherited;
+end;
 
 function TInputStream.isEof: Boolean;
 var

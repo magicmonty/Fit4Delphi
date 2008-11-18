@@ -1,5 +1,5 @@
 !path bin\*.bpl
-!define COMMAND_PATTERN {bin\FitServer.exe -v %p}
+!define COMMAND_PATTERN {bin\DelphiFitServer.exe -v %p}
 
 *Browsing Music*
 

@@ -18,7 +18,7 @@ program DelphiTestRunner;
 uses
   SysUtils,
   Classes,
-  IdTCPStream in 'c:\Program Files\Borland\BDS\4.0\source\Indy10\Core\IdTCPStream.pas',
+  IdTCPStream,
   StringBuffer in '..\fitnesse\util\StringBuffer.pas',
   ByteArrayInputStream in '..\fitnesse\streams\ByteArrayInputStream.pas',
   ByteArrayOutputStream in '..\fitnesse\streams\ByteArrayOutputStream.pas',
