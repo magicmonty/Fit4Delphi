@@ -92,7 +92,7 @@ begin
   while not stream.isEof do
   begin
     s := read(1);
-    if s = #13 then // TODO #10 case, slow
+    if s = #13 then // TODO #13 case, slow
     begin
       s := read(1);
       if s = #10 then // TODO #10 case, slow

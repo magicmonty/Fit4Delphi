@@ -73,7 +73,7 @@ begin
 
     if (atStartOfResult) then
     begin
-      indexOfFirstLineBreak := indexOf(#13#10, data);
+      indexOfFirstLineBreak := indexOf(#10, data) - 1;
       pageTitle := substring2(data, 0, indexOfFirstLineBreak);
       data := substring(data, indexOfFirstLineBreak + 1);
       currentPageResult := TPageResult.Create(pageTitle);

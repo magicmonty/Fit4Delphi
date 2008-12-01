@@ -45,6 +45,7 @@ type
     procedure addHostHeader();
     procedure addBodyPart(input : string);
     procedure multipart();
+    class function URLEncode(const ASrc: string): string; static;
   public
     constructor Create; overload;
     constructor Create(resource : string); overload;
@@ -282,6 +283,21 @@ begin
   inputs.AddObject(key, str);
 end;
 
+class function TRequestBuilder.URLEncode(const ASrc: string): string;
+var
+  i: Integer;
+begin
+  Result := '';    {Do not Localize}
+  for i := 1 to Length(ASrc) do begin
+    if ASrc[i] in ['a'..'z','A'..'Z','0'..'9','.','-','*','_'] then
+      Result := Result + ASrc[i]
+    else if ASrc[i] = ' ' then
+      Result := Result + '+'
+    else
+      Result := Result + '%' + IntToHex(Ord(ASrc[i]), 2);  {do not localize}
+  end;
+end;
+
 function TRequestBuilder.inputString() : string;
 var
   buffer : TStringBuffer;
@@ -298,7 +314,7 @@ begin
     value := (inputs.Objects[i] as TFitObject);
     if (not first) then
       buffer.append('&');
-    buffer.append(key).append('=').append(TIdURI.PathEncode(value.toString() {, 'UTF-8')}));
+    buffer.append(key).append('=').append(URLEncode(value.toString() {, 'UTF-8')}));
     first := false;
   end;
   Result := buffer.toString();

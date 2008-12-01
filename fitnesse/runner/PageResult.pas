@@ -108,9 +108,8 @@ var
   buffer : TStringBuffer;
 begin
   buffer := TStringBuffer.Create;
-  buffer.append(#13#10); //TODO Added newline
-  buffer.append(counts.toString()).append(#13#10); //TODO Swapped title and counts
   buffer.append(title).append(#13#10);
+  buffer.append(counts.toString()).append(#13#10);
   buffer.append(FcontentBuffer);
   Result := buffer.toString();
   buffer.Free;

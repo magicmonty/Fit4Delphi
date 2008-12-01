@@ -72,7 +72,7 @@ var
 begin
   theRunner := TFileRunner.Create;
   args := TStringList.Create;
-  fileCOntent := TStringList.Create;
+  fileContent := TStringList.Create;
   fileContent.LoadFromFile('runnerResults.txt');
   args.Add('fitrunner.exe');
   args.Add('runnertest.htm');
@@ -80,7 +80,7 @@ begin
   theRunner.run(args);
 
   checkEquals(fileContent.text, theRunner.Output.text);
-  //TODO  checkEquals( 'runnertest.txt', theRunner.theFixture.Summary.values[ 'input file' ] );
+  checkEquals(ExpandFileName('runnertest.htm'), theRunner.fixture.Summary.values['input file']);
 end;
 
 { TestFixture }
